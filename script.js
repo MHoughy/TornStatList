@@ -238,7 +238,7 @@ function createTableRow(row, status, attackLink, index) {
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.spd}</td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.dex}</td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.Spy_Date}</td>
-      <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.BSP_Total}</td>
+      <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.BSP_total}</td>
       <td class="px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">
         <div class="sm:hidden w-40">${status}</div>
         <div class="hidden sm:block w-40">${status}</div>
