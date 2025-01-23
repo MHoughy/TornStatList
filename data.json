@@ -2,243 +2,243 @@
     "The ZOO": [
         {
             "name": "BoBanders",
-            "id": 507829,
-            "lvl": 59,
+            "id": "507829",
+            "lvl": "59",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 100843139
+            "BSP_total": "100843139"
         },
         {
             "name": "Hough",
-            "id": 910830,
-            "lvl": 80,
+            "id": "910830",
+            "lvl": "80",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 684201323
+            "BSP_total": "684201323"
         },
         {
             "name": "SPMSG",
-            "id": 1006747,
-            "lvl": 91,
+            "id": "1006747",
+            "lvl": "91",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 2091222885
+            "BSP_total": "2091222885"
         },
         {
             "name": "FryFenix",
-            "id": 1008661,
-            "lvl": 69,
+            "id": "1008661",
+            "lvl": "69",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 976974872
+            "BSP_total": "976974872"
         },
         {
             "name": "Bojji",
-            "id": 1389947,
-            "lvl": 75,
+            "id": "1389947",
+            "lvl": "75",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 570281533
+            "BSP_total": "570281533"
         },
         {
             "name": "Rodrick",
-            "id": 1402437,
-            "lvl": 50,
+            "id": "1402437",
+            "lvl": "50",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 459784155
+            "BSP_total": "459784155"
         },
         {
             "name": "Paddington",
-            "id": 1425903,
-            "lvl": 100,
+            "id": "1425903",
+            "lvl": "100",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 4445080552
+            "BSP_total": "4445080552"
         },
         {
             "name": "markus-a",
-            "id": 1563257,
-            "lvl": 100,
+            "id": "1563257",
+            "lvl": "100",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 3501796424
+            "BSP_total": "3501796424"
         },
         {
             "name": "Kyleb",
-            "id": 1712910,
-            "lvl": 50,
+            "id": "1712910",
+            "lvl": "50",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 337084630
+            "BSP_total": "337084630"
         },
         {
             "name": "lionKnight",
-            "id": 1713711,
-            "lvl": 88,
+            "id": "1713711",
+            "lvl": "88",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 205646607
+            "BSP_total": "205646607"
         },
         {
             "name": "Calhoun",
-            "id": 1825632,
-            "lvl": 100,
-            "total": 4179270986,
-            "str": 941389418,
-            "def": 502094318,
-            "spd": 941568514,
-            "dex": 1794218736,
+            "id": "1825632",
+            "lvl": "100",
+            "total": "4179270986",
+            "str": "941389418",
+            "def": "502094318",
+            "spd": "941568514",
+            "dex": "1794218736",
             "Spy_Date": "1 year ago",
-            "BSP_total": 5976841934
+            "BSP_total": "5976841934"
         },
         {
             "name": "rockery57",
-            "id": 1864788,
-            "lvl": 25,
+            "id": "1864788",
+            "lvl": "25",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 916679
+            "BSP_total": "916679"
         },
         {
             "name": "BoredWayfarer",
-            "id": 1961768,
-            "lvl": 31,
+            "id": "1961768",
+            "lvl": "31",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 4921969593
+            "BSP_total": "4921969593"
         },
         {
             "name": "Zomboy",
-            "id": 1980892,
-            "lvl": 46,
+            "id": "1980892",
+            "lvl": "46",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 16135676
+            "BSP_total": "16135676"
         },
         {
             "name": "chrisk1013",
-            "id": 1993033,
-            "lvl": 48,
+            "id": "1993033",
+            "lvl": "48",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 23623722
+            "BSP_total": "23623722"
         },
         {
             "name": "Stitch_Yew_Up",
-            "id": 2033986,
-            "lvl": 15,
+            "id": "2033986",
+            "lvl": "15",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 175326106
+            "BSP_total": "175326106"
         },
         {
             "name": "Draefend",
-            "id": 2067236,
-            "lvl": 89,
+            "id": "2067236",
+            "lvl": "89",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 2566398380
+            "BSP_total": "2566398380"
         },
         {
             "name": "IceSkullFire",
-            "id": 2078805,
-            "lvl": 23,
+            "id": "2078805",
+            "lvl": "23",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 990310531
+            "BSP_total": "990310531"
         },
         {
             "name": "Foe",
-            "id": 2092175,
-            "lvl": 100,
+            "id": "2092175",
+            "lvl": "100",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 6856873124
+            "BSP_total": "6856873124"
         },
         {
             "name": "GilbertoMarley",
-            "id": 2121875,
-            "lvl": 35,
+            "id": "2121875",
+            "lvl": "35",
             "total": "",
             "str": "",
             "def": "",
             "spd": "",
             "dex": "",
             "Spy_Date": "",
-            "BSP_total": 162531384
+            "BSP_total": "162531384"
         }
     ]
 }
