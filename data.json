@@ -9,8 +9,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 100843139
+            "Spy_Date": "",
+            "BSP_total": 100843139
         },
         {
             "name": "Hough",
@@ -21,8 +21,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 684201323
+            "Spy_Date": "",
+            "BSP_total": 684201323
         },
         {
             "name": "SPMSG",
@@ -33,8 +33,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 2091222885
+            "Spy_Date": "",
+            "BSP_total": 2091222885
         },
         {
             "name": "FryFenix",
@@ -45,8 +45,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 976974872
+            "Spy_Date": "",
+            "BSP_total": 976974872
         },
         {
             "name": "Bojji",
@@ -57,8 +57,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 570281533
+            "Spy_Date": "",
+            "BSP_total": 570281533
         },
         {
             "name": "Rodrick",
@@ -69,8 +69,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 459784155
+            "Spy_Date": "",
+            "BSP_total": 459784155
         },
         {
             "name": "Paddington",
@@ -81,8 +81,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 4445080552
+            "Spy_Date": "",
+            "BSP_total": 4445080552
         },
         {
             "name": "markus-a",
@@ -93,8 +93,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 3501796424
+            "Spy_Date": "",
+            "BSP_total": 3501796424
         },
         {
             "name": "Kyleb",
@@ -105,8 +105,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 337084630
+            "Spy_Date": "",
+            "BSP_total": 337084630
         },
         {
             "name": "lionKnight",
@@ -117,8 +117,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 205646607
+            "Spy_Date": "",
+            "BSP_total": 205646607
         },
         {
             "name": "Calhoun",
@@ -129,8 +129,8 @@
             "def": 502094318,
             "spd": 941568514,
             "dex": 1794218736,
-            "Spy Date": "1 year ago",
-            "predicted total": 5976841934
+            "Spy_Date": "1 year ago",
+            "BSP_total": 5976841934
         },
         {
             "name": "rockery57",
@@ -141,8 +141,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 916679
+            "Spy_Date": "",
+            "BSP_total": 916679
         },
         {
             "name": "BoredWayfarer",
@@ -153,8 +153,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 4921969593
+            "Spy_Date": "",
+            "BSP_total": 4921969593
         },
         {
             "name": "Zomboy",
@@ -165,8 +165,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 16135676
+            "Spy_Date": "",
+            "BSP_total": 16135676
         },
         {
             "name": "chrisk1013",
@@ -177,8 +177,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 23623722
+            "Spy_Date": "",
+            "BSP_total": 23623722
         },
         {
             "name": "Stitch_Yew_Up",
@@ -189,8 +189,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 175326106
+            "Spy_Date": "",
+            "BSP_total": 175326106
         },
         {
             "name": "Draefend",
@@ -201,8 +201,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 2566398380
+            "Spy_Date": "",
+            "BSP_total": 2566398380
         },
         {
             "name": "IceSkullFire",
@@ -213,8 +213,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 990310531
+            "Spy_Date": "",
+            "BSP_total": 990310531
         },
         {
             "name": "Foe",
@@ -225,8 +225,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 6856873124
+            "Spy_Date": "",
+            "BSP_total": 6856873124
         },
         {
             "name": "GilbertoMarley",
@@ -237,8 +237,8 @@
             "def": "",
             "spd": "",
             "dex": "",
-            "Spy Date": "",
-            "predicted total": 162531384
+            "Spy_Date": "",
+            "BSP_total": 162531384
         }
     ]
 }
