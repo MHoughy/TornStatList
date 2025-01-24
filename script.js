@@ -119,6 +119,62 @@ function startCountdown() {
   }, 1000);
 }
 
+function parseAbbreviatedNumber(value) {
+  if (!value) return 0; // Default to 0 for empty or invalid input
+
+  const normalizedValue = value.toUpperCase(); // Ensure case insensitivity
+  const match = normalizedValue.match(/^(\d+(\.\d+)?)([KMB])?$/);
+
+  if (!match) return NaN; // Return NaN for invalid input
+
+  const number = parseFloat(match[1]);
+  const unit = match[3];
+
+  switch (unit) {
+    case "K": // Thousands
+      return number * 1_000;
+    case "M": // Millions
+      return number * 1_000_000;
+    case "B": // Billions
+      return number * 1_000_000_000;
+    default: // No unit
+      return number;
+  }
+}
+
+function applySingleFilter() {
+  const inputValue = document.getElementById("min-value-filter").value;
+  const minValue = parseAbbreviatedNumber(inputValue);
+
+  if (isNaN(minValue)) {
+    alert("Invalid input. Please enter a valid number (e.g., 10k, 5M, 2B).");
+    return;
+  }
+
+  const filteredUsers = tableData.filter((user) => {
+    const meetsTotalCondition = user.total >= minValue;
+    const meetsBspCondition = user.BSP_total >= minValue;
+    return meetsTotalCondition || meetsBspCondition; // Include if either condition is true
+  });
+
+  renderTable(filteredUsers);
+}
+
+const usersWithStatus = await Promise.all(userPromises);
+tableData = usersWithStatus; // Store globally
+applySingleFilter(); // Filter and render the table
+
+function renderTable(data) {
+  const tableBody = document.getElementById("table-body");
+  tableBody.innerHTML = ""; // Clear existing rows
+
+  data.forEach((user, index) => {
+    const attackLink = createAttackLink(user.id, user.status);
+    const newRow = createTableRow(user, user.status, attackLink, index);
+    tableBody.innerHTML += newRow;
+  });
+}
+
 function parseHospitalTime(status) {
   const timeMatch = status.match(/\((\d+)m (\d+)s\)/);
   if (!timeMatch) return Infinity;
@@ -254,6 +310,8 @@ function createTableRow(row, status, attackLink, index) {
     </tr>
   `;
 }
+
+document.getElementById("min-value-filter").addEventListener("input", applySingleFilter);
 
 document.addEventListener("DOMContentLoaded", () => {
   populateAPIKey();
