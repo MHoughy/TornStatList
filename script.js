@@ -66,15 +66,17 @@ async function fetchData() {
 
     const usersWithStatus = await Promise.all(userPromises);
 
-    const sortedUsers = usersWithStatus.sort((a, b) => {
-      // Check if both have BSP_total values
-      if (a.BSP_total && b.BSP_total) {
-        return b.BSP_total - a.BSP_total; // Sort by BSP_total in descending order
-      }
-    
-      // If one or both lack BSP_total, sort by total
-      return b.total - a.total; // Sort by total in descending order
-    });
+  const sortedUsers = usersWithStatus.sort((a, b) => {
+    const aBSP = parseFloat(a.BSP_total) || 0;
+    const bBSP = parseFloat(b.BSP_total) || 0;
+
+    const aTotal = parseFloat(a.total) || 0;
+    const bTotal = parseFloat(b.total) || 0;
+
+  // Sort by BSP_total first if available, otherwise fallback to total
+    if (aBSP !== bBSP) return bBSP - aBSP;
+    return bTotal - aTotal;
+  });
 
     sortedUsers.forEach((user, index) => {
       const attackLink = createAttackLink(user.id, user.status);
