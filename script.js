@@ -155,14 +155,12 @@ function formatStatus(status) {
     const minutes = Math.floor(remaining / 60);
     const seconds = Math.floor(remaining % 60);
     formattedStatus = `Hospitalized (${minutes}m ${seconds}s)`;
+  } 
+  else if (formattedStatus === "Abroad" || formattedStatus === "Traveling") {
+    formattedStatus = status.description || formattedStatus; // Fallback to state if description is missing
   }
-  if (formattedStatus ==="Abroad") {
-    formattedStatus = status.description
-  }
-  if (formattedStatus ==="Traveling"){
-    formattedStatus = status.description
-  }
-  return formattedStatus; 
+
+  return formattedStatus;
 }
 
 function updateStatus() {
