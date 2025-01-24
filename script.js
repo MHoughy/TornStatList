@@ -255,6 +255,60 @@ function createTableRow(row, status, attackLink, index) {
   `;
 }
 
+function parseAbbreviatedNumber(value) {
+  if (!value) return 0; // Default to 0 for empty or invalid input
+
+  const normalizedValue = value.toUpperCase(); // Ensure case insensitivity
+  const match = normalizedValue.match(/^(\d+(\.\d+)?)([KMB])?$/);
+
+  if (!match) return NaN; // Return NaN for invalid input
+
+  const number = parseFloat(match[1]);
+  const unit = match[3];
+
+  switch (unit) {
+    case "K": // Thousands
+      return number * 1_000;
+    case "M": // Millions
+      return number * 1_000_000;
+    case "B": // Billions
+      return number * 1_000_000_000;
+    default: // No unit
+      return number;
+  }
+}
+
+function applySingleFilter() {
+  const inputValue = document.getElementById("min-value-filter").value;
+  const minValue = parseAbbreviatedNumber(inputValue);
+
+  if (isNaN(minValue)) {
+    alert("Invalid input. Please enter a valid number (e.g., 10k, 5M, 2B).");
+    return;
+  }
+
+  const filteredUsers = tableData.filter((user) => {
+    const meetsTotalCondition = user.total >= minValue;
+    const meetsBspCondition = user.BSP_total >= minValue;
+    return meetsTotalCondition || meetsBspCondition; // Include if either condition is true
+  });
+
+  renderTable(filteredUsers);
+}
+
+document.getElementById("min-value-filter").addEventListener("input", (event) => {
+  const inputValue = event.target.value;
+  const minValue = parseAbbreviatedNumber(inputValue);
+
+  if (isNaN(minValue)) {
+    event.target.setCustomValidity("Invalid format. Use numbers like 10k, 5M, 2B.");
+  } else {
+    event.target.setCustomValidity(""); // Clear the error
+  }
+});
+
+document.getElementById("apply-filter-button").addEventListener("click", applySingleFilter);
+
 document.addEventListener("DOMContentLoaded", () => {
   populateAPIKey();
   loadListNames();
