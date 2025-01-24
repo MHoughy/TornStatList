@@ -67,14 +67,13 @@ async function fetchData() {
     const usersWithStatus = await Promise.all(userPromises);
 
     const sortedUsers = usersWithStatus.sort((a, b) => {
-      if (a.status === "Okay" && b.status !== "Okay") return -1;
-      if (a.status !== "Okay" && b.status === "Okay") return 1;
-      if (a.status === "Okay" && b.status === "Okay") return 0;
-
-      const aRemaining = parseHospitalTime(a.status);
-      const bRemaining = parseHospitalTime(b.status);
-
-      return aRemaining - bRemaining;
+      // Check if both have BSP_total values
+      if (a.BSP_total && b.BSP_total) {
+        return b.BSP_total - a.BSP_total; // Sort by BSP_total in descending order
+      }
+    
+      // If one or both lack BSP_total, sort by total
+      return b.total - a.total; // Sort by total in descending order
     });
 
     sortedUsers.forEach((user, index) => {
@@ -157,7 +156,13 @@ function formatStatus(status) {
     const seconds = Math.floor(remaining % 60);
     formattedStatus = `Hospitalized (${minutes}m ${seconds}s)`;
   }
-  return formattedStatus;
+  if (formattedStatus ==="Abroad") {
+    formattedStatus = status.description
+  }
+  if (formattedStatus ==="Traveling"){
+    formattedStatus = status.description
+  }
+  return formattedStatus; 
 }
 
 function updateStatus() {
