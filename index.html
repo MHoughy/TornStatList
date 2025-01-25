@@ -27,8 +27,8 @@
 
   table {
     width: 100%;
-    border-collapse: collapse;
-    table-layout: auto;
+    border-collapse: separate;
+    border-spacing: 0;
   }
 
   thead, tbody {
@@ -41,7 +41,6 @@
   }
 
   th, td {
-    display: table-cell;
     padding: 8px 16px;
     text-align: left;
   }
@@ -51,29 +50,26 @@
   th, td:nth-last-child(1) {
     position: sticky;
     left: 0;
-    background-color: white; /* or your desired background color */
-    z-index: 1; /* Ensure these columns are on top */
+    background-color: white; /* Ensures visibility and readability */
+    z-index: 1; /* Keeps columns on top */
   }
 
   @media (max-width: 640px) {
-    thead, tbody, tr, th, td {
-      display: revert;
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
     }
     th, td {
-      text-align: left; /* Or center, depending on your preference */
+      text-align: left;
     }
     th, td:nth-child(1),
     th, td:nth-child(2),
     th, td:nth-last-child(1) {
       position: sticky;
       left: 0;
-      background-color: white; /* or your desired background color */
+      background-color: white;
       z-index: 1;
-    }
-    table {
-      display: block;
-      overflow-x: auto;
-      white-space: nowrap;
     }
   }
 </style>
@@ -251,24 +247,25 @@
       <thead>
         <tr>
           <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6">Player</th>
-          <th class="lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Level</th>
+          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Level</th>
           <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">BSP Total</th>
           <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Total</th>
-          <th class="lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Strength</th>
-          <th class="lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Defense</th>
-          <th class="lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Speed</th>
-          <th class="lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Dexterity</th>
+          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Strength</th>
+          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Defense</th>
+          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Speed</th>
+          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Dexterity</th>
           <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Spy Date</th>
           <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Status</th>
           <th class="relative text-sm sr-only">Attack</th>
         </tr>
       </thead>
-      <tbody id="table-body" style="overflow-y: auto;">
+      <tbody id="table-body">
       </tbody>
     </table>
     <p id="no-data-message" class="hidden px-3 py-3.5 text-sm text-gray-400 border-t border-gray-200">No data available.</p>
   </div>
 </div>
+
 
               </div>
 		<script>
