@@ -56,9 +56,22 @@
   top: 0;
   z-index: 2;
   background-color: transparent; /* Ensure transparent background */
+  min-width: 100px;
 }
 
-/* The following CSS is primarily for table layout and row/column spacing */
+/* Resize the table to fit within the container */
+.wrapper {
+  display: flex;
+  overflow-x: auto;
+}
+
+/* Flex settings for table rows */
+thead, tbody, tr {
+  display: flex;
+  flex-direction: row;
+  width: auto; /* Ensure table takes up required width */
+}
+
 th:first-child, td:first-child {
   left: 0; /* Ensure the first column is sticky */
   min-width: 100px;
@@ -73,32 +86,39 @@ th:last-child, td:last-child {
   min-width: 100px;
 }
 
-@media (max-width: 640px) {
-    .wrapper {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-    }
-    table {
-        width: 100%; /* Ensure table doesn't exceed parent width */
-        min-width: 600px; /* Optional to ensure all columns are visible */
-    }
-
-    th, td {
-      padding: 4px 8px;
-    }
-  }
-
-@media (max-width: 360px) {
-    th, td {
-        padding: 2px 4px;
-        font-size: 0.875rem;
-    }
+th, td {
+  flex: 1;
+  padding: 8px 16px;
+  text-align: left;
+  white-space: nowrap; /* Ensure text doesn't wrap */
 }
 
-  .container {
-    overflow: hidden;
+@media (max-width: 640px) {
+  .wrapper {
+    display: block;
+    width: 100%; /* Ensure the wrapper doesn’t overflow container */
+    overflow-x: auto;
   }
+  table {
+    width: 100%; /* Ensure table takes up full width */
+    min-width: 600px; /* Ensure all columns are visible */
+  }
+  th, td {
+    padding: 4px 8px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 360px) {
+  th, td {
+    padding: 2px 4px; /* Further adjust padding for very small screens */
+    font-size: 0.875rem; /* Adjust font size for smaller screens */
+  }
+}
+
+.container {
+  overflow: hidden; /* Prevent overflow in container */
+}
+
 </style>
     <script
       defer
@@ -269,9 +289,9 @@ th:last-child, td:last-child {
 </div>
 
 <div id="data-table" class="py-4 px-4 sm:px-6 lg:px-8 container hidden">
-  <div class="overflow-x-auto wrapper">
-    <table class="table-fixed divide-y divide-gray-300" style="width: 100%; table-layout: fixed;">
-      <thead>
+  <div class="overflow-x-auto wrapper flex">
+    <table class="table-fixed divide-y divide-gray-300 w-full">
+      <thead class="flex">
         <tr>
           <th class="w-1/5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6 sticky">Player</th>
           <th class="w-1/14 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 hidden lg:table-cell">BSP Total</th>
@@ -285,7 +305,7 @@ th:last-child, td:last-child {
           <th class="w-1/5 relative text-sm sr-only sticky">Attack</th>
         </tr>
       </thead>
-      <tbody id="table-body">
+      <tbody id="table-body" class="flex flex-col">
       </tbody>
     </table>
     <p id="no-data-message" class="hidden px-3 py-3.5 text-sm text-gray-400 border-t border-gray-200">No data available.</p>
