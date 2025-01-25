@@ -70,13 +70,15 @@
     right: 0;
   }
 
-  @media (max-width: 640px) {
+@media (max-width: 640px) {
+    .wrapper {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
     table {
-      display: block;
-      overflow-x: auto;
-      overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
-      white-space: nowrap;
+        width: 100%; /* Ensure table doesn't exceed parent width */
+        min-width: 600px; /* Optional to ensure all columns are visible */
     }
 
     th, td {
@@ -84,12 +86,12 @@
     }
   }
 
-  @media (max-width: 360px) {
+@media (max-width: 360px) {
     th, td {
-      padding: 2px 4px;
-      font-size: 0.875rem;
+        padding: 2px 4px;
+        font-size: 0.875rem;
     }
-  }
+}
 
   .container {
     overflow: hidden;
@@ -264,7 +266,7 @@
 </div>
 
 <div id="data-table" class="py-4 px-4 sm:px-6 lg:px-8 container hidden">
-  <div class="overflow-x-auto">
+  <div class="overflow-x-auto wrapper">
     <table class="table-fixed divide-y divide-gray-300" style="width: 100%; table-layout: fixed;">
       <thead>
         <tr>
