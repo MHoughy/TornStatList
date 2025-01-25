@@ -135,8 +135,8 @@
                             const match = value.match(regex);
                             if (!match) return NaN; // Invalid input
 
-                            const number = parseFloat(match[2]); // The numeric part
-                            const unit = match[3].toLowerCase(); // The unit (k, m, b)
+                            const number = parseFloat(match[1]); // The numeric part
+                            const unit = match[2].toLowerCase(); // The unit (k, m, b)
 
                             // Convert based on the unit
                             switch (unit) {
