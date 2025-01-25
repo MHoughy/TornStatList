@@ -168,7 +168,7 @@ function formatStatus(status) {
 function updateStatus() {
   const rows = document.querySelectorAll("#table-body tr");
   rows.forEach((row) => {
-    const statusCell = row.querySelector("td:nth-child(9)");
+    const statusCell = row.querySelector("td:nth-child(8)");
     const currentStatus = statusCell.textContent.trim();
     const remaining = parseHospitalTime(currentStatus);
     if (remaining === Infinity) return;
@@ -177,7 +177,7 @@ function updateStatus() {
     if (updatedRemaining <= 0) {
       statusCell.textContent = "Okay";
       const userId = row.querySelector("a[href*='XID']").textContent.match(/\[(\d+)\]/)[1];
-      const attackLinkCell = row.querySelector("td:nth-child(10)");
+      const attackLinkCell = row.querySelector("td:nth-child(9)");
       attackLinkCell.innerHTML = createAttackLink(userId, "Okay");
     } else {
       const updatedMinutes = Math.floor(updatedRemaining / 60);
@@ -242,7 +242,6 @@ function createTableRow(row, status, attackLink, index) {
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.def}</td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.spd}</td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.dex}</td
-      <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.Spy_Date}</td>
       <td class="px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">
         <div class="sm:hidden w-40">${status}</div>
         <div class="hidden sm:block w-40">${status}</div>
