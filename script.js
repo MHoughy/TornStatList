@@ -260,7 +260,7 @@ function createTableRow(row, status, attackLink, index) {
   return `
   <tr>
       <td class="relative py-4 pl-4 pr-3 text-sm sm:pl-6 min-w-0 ${borderClass} sticky"
-          style="left: 0px;">
+          style="left: 0;">
           <div class="font-medium text-gray-900 dark:text-gray-300">
               <a href="https://www.torn.com/profiles.php?XID=${row.id}" target="_blank">${row.name} <span class="ml-1 text-blue-600">[${row.id}]</span></a>
           </div>
@@ -278,7 +278,7 @@ function createTableRow(row, status, attackLink, index) {
       <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.Spy_Date}</td>
       <td class="px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${status}</td>
       <td class="relative py-3.5 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 min-w-0 ${borderClass} sticky"
-          style="right: 0px;">${attackLink}</td>
+          style="right: 0;">${attackLink}</td>
   </tr>
   `;
 }
