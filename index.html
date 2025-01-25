@@ -265,36 +265,21 @@
 
 <div id="data-table" class="py-4 px-4 sm:px-6 lg:px-8 container hidden">
   <div class="overflow-x-auto">
-    <table class="divide-y divide-gray-300" style="width: 100%; table-layout: auto;">
-	    <!--
+    <table class="table-fixed divide-y divide-gray-300" style="width: 100%; table-layout: fixed;">
       <thead>
         <tr>
-          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6 sticky">Player</th>
-          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">BSP Total</th>
-          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Total</th>
-          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Strength</th>
-          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Defense</th>
-          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Speed</th>
-          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Dexterity</th>
-          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Spy Date</th>
-          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Status</th>
-          <th class="relative text-sm sr-only sticky">Attack</th>
+          <th class="w-1/5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6 sticky">Player</th>
+          <th class="w-1/10 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 hidden lg:table-cell">BSP Total</th>
+          <th class="w-1/10 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 hidden lg:table-cell">Total</th>
+          <th class="w-1/10 hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Strength</th>
+          <th class="w-1/10 hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Defense</th>
+          <th class="w-1/10 hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Speed</th>
+          <th class="w-1/10 hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Dexterity</th>
+          <th class="w-1/10 hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Spy Date</th>
+          <th class="w-1/10 text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Status</th>
+          <th class="w-1/10 relative text-sm sr-only sticky">Attack</th>
         </tr>
-      </thead>-->
-	<thead>
- 	  <tr>
-    	    <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6 sticky">Player</th>
-    	    <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300 hidden lg:table-cell">BSP Total</th>
-    	    <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300 hidden lg:table-cell">Total</th>
-    	    <th class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Strength</th>
-    	    <th class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Defense</th>
-    	    <th class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Speed</th>
-    	    <th class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Dexterity</th>
-    	    <th class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Spy Date</th>
-   	    <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Status</th>
-    	    <th class="relative text-sm sr-only sticky">Attack</th>
-  	  </tr>
-	</thead>
+      </thead>
       <tbody id="table-body">
       </tbody>
     </table>
