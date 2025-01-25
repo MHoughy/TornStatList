@@ -186,10 +186,10 @@
     Filter by Total or BSP Total:
   </label>
   <input
-    type="number"
+    type="text"
     id="filter-input"
     class="mt-1 p-3 block w-full sm:w-1/2 lg:w-1/3 border border-gray-300 rounded-lg shadow-md focus:ring-indigo-500 focus:border-indigo-500 text-lg sm:text-base"
-    placeholder="Optional filter: Enter your total"
+    placeholder="Optional filter: Enter your total (e.g. 10M)"
     style="width: 500px;" 
   />
 </div>
@@ -239,29 +239,50 @@
                   </div>
                 </div>
               </div>
-            <script>
-              document.getElementById("filter-input").addEventListener("input", function () {
-              const filterValue = parseFloat(this.value);
-              const tableBody = document.getElementById("table-body");
-              const rows = tableBody.querySelectorAll("tr");
-              let visible = false;
-
-              rows.forEach((row) => {
-                const bspTotal = parseFloat(row.children[2].textContent.trim());
-                const total = parseFloat(row.children[3].textContent.trim());
-
-              if (!filterValue || bspTotal <= filterValue || total <= filterValue) {
-                row.style.display = "";
-                visible = true;
-              } else {
-                row.style.display = "none";
-                  }
-                });
-
-                const noDataMessage = document.getElementById("no-data-message");
-                noDataMessage.classList.toggle("hidden", visible);
-                });
-              </script>
+					<script>
+					// Function to parse abbreviated numbers (e.g., 10k, 10M, 10B)
+					function parseAbbreviatedNumber(value) {
+						const regex = /^(\d+(?:\.\d+)?)([kKmMbB]?)$/;
+						const match = value.match(regex);
+						if (!match) return NaN; // Invalid input
+					
+						const number = parseFloat(match[1]);
+						const unit = match[2].toLowerCase();
+					
+						switch (unit) {
+						case "k":
+							return number * 1_000;
+						case "m":
+							return number * 1_000_000;
+						case "b":
+							return number * 1_000_000_000;
+						default:
+							return number; // No unit, return the number as is
+						}
+					}
+					
+					document.getElementById("filter-input").addEventListener("input", function () {
+						const filterValue = parseAbbreviatedNumber(this.value.trim());
+						const tableBody = document.getElementById("table-body");
+						const rows = tableBody.querySelectorAll("tr");
+						let visible = false;
+					
+						rows.forEach((row) => {
+						const bspTotal = parseFloat(row.children[1].textContent.trim());
+						const total = parseFloat(row.children[2].textContent.trim());
+					
+						if (!isNaN(filterValue) && (bspTotal <= filterValue || total <= filterValue)) {
+							row.style.display = "";
+							visible = true;
+						} else {
+							row.style.display = "none";
+						}
+						});
+					
+						const noDataMessage = document.getElementById("no-data-message");
+						noDataMessage.classList.toggle("hidden", visible);
+					});
+					</script>
             </div>
           </div>
         </div>
