@@ -168,7 +168,7 @@ function formatStatus(status) {
 function updateStatus() {
   const rows = document.querySelectorAll("#table-body tr");
   rows.forEach((row) => {
-    const statusCell = row.querySelector("td:nth-child(9)");
+    const statusCell = row.querySelector("td:nth-child(8)");
     const currentStatus = statusCell.textContent.trim();
     const remaining = parseHospitalTime(currentStatus);
     if (remaining === Infinity) return;
@@ -177,7 +177,7 @@ function updateStatus() {
     if (updatedRemaining <= 0) {
       statusCell.textContent = "Okay";
       const userId = row.querySelector("a[href*='XID']").textContent.match(/\[(\d+)\]/)[1];
-      const attackLinkCell = row.querySelector("td:nth-child(10)");
+      const attackLinkCell = row.querySelector("td:nth-child(9)");
       attackLinkCell.innerHTML = createAttackLink(userId, "Okay");
     } else {
       const updatedMinutes = Math.floor(updatedRemaining / 60);
@@ -233,7 +233,7 @@ function createTableRow(row, status, attackLink, index) {
         </div>
         <div class="mt-1 flex flex-col text-gray-500 dark:text-gray-300 sm:block lg:hidden">
             <span>Level: ${row.lvl}</span>
-            <span>Total: ${row.BSP_total}</span>
+            <span>Total: ${row.total}</span>
         </div>
       </td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.lvl}</td>
@@ -251,6 +251,7 @@ function createTableRow(row, status, attackLink, index) {
       </td>
     </tr>
   `;
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   populateAPIKey();
