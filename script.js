@@ -233,7 +233,7 @@ function createTableRow(row, status, attackLink, index) {
         </div>
         <div class="mt-1 flex flex-col text-gray-500 dark:text-gray-300 sm:block lg:hidden">
             <span>Level: ${row.lvl}</span>
-            <span>Total: ${row.total}</span>
+            <span>Total: ${row.BSP_total}</span>
         </div>
       </td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.lvl}</td>
