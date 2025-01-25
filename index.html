@@ -45,13 +45,21 @@
     text-align: left;
   }
 
-  th, td:nth-child(1),
-  th, td:nth-child(2),
-  th, td:nth-last-child(1) {
+  /* Ensuring the first two columns stay sticky */
+  th:first-child, td:first-child, 
+  th:nth-child(2), td:nth-child(2) {
     position: sticky;
     left: 0;
-    background-color: white; /* Ensures visibility and readability */
-    z-index: 1; /* Keeps columns on top */
+    background-color: white;
+    z-index: 2; /* Ensure these columns stay on top */
+  }
+
+  /* Ensuring the last column stays sticky */
+  th:last-child, td:last-child {
+    position: sticky;
+    right: 0;
+    background-color: white;
+    z-index: 1; /* Ensure these columns stay on top */
   }
 
   @media (max-width: 640px) {
@@ -60,16 +68,12 @@
       overflow-x: auto;
       white-space: nowrap;
     }
-    th, td {
-      text-align: left;
-    }
-    th, td:nth-child(1),
-    th, td:nth-child(2),
-    th, td:nth-last-child(1) {
+    th:first-child, td:first-child,
+    th:nth-child(2), td:nth-child(2),
+    th:last-child, td:last-child {
+      position: -webkit-sticky; /* for Safari */
       position: sticky;
-      left: 0;
       background-color: white;
-      z-index: 1;
     }
   }
 </style>
