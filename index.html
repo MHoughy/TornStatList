@@ -54,28 +54,31 @@
     position: sticky;
     top: 0;
     z-index: 2;
-    background-color: #fff; /* Ensure consistent background color */
+    background-color: inherit; /* Use inherit instead of white */
     min-width: 100px;
   }
 
   th:first-child, td:first-child {
     left: 0;
+    background-color: #f1f1f1; /* Set specific background color */
   }
 
   th:nth-child(2), td:nth-child(2) {
     left: 60px;
+    background-color: #f1f1f1; /* Set specific background color */
   }
 
   th:last-child, td:last-child {
     right: 0;
+    background-color: #f1f1f1; /* Set specific background color */
   }
 
   @media (max-width: 640px) {
     table {
       display: block;
       overflow-x: auto;
-      overflow-y: hidden; /* Ensure no vertical scrolling */
-      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
       white-space: nowrap;
     }
 
