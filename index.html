@@ -26,27 +26,35 @@
   }
 
   table {
-    @apply w-full border-separate border-spacing-0;
+    width: 100%;
+    border-collapse: collapse;
   }
 
   thead {
-    @apply table-header-group w-full;
+    display: table-header-group;
+    width: 100%;
   }
 
   tbody {
-    @apply table-row-group w-full;
+    display: table-row-group;
+    width: 100%;
   }
 
   tr {
-    @apply table-row;
+    display: table-row;
   }
 
   th, td {
-    @apply p-2 md:p-4 text-left;
+    padding: 8px 16px;
+    text-align: left;
   }
 
   .sticky {
-    @apply sticky z-2;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 2;
     min-width: 100px;
   }
 
@@ -64,21 +72,26 @@
 
   @media (max-width: 640px) {
     table {
-      @apply block overflow-x-auto whitespace-nowrap;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
     }
+
     th, td {
-      @apply text-left;
+      padding: 4px 8px;
+      text-align: left;
     }
   }
 
   @media (max-width: 360px) {
     th, td {
-      @apply p-1 text-sm;
+      padding: 2px 4px;
+      font-size: 0.875rem;
     }
   }
 
   .container {
-    @apply overflow-hidden;
+    overflow: hidden;
   }
 </style>
     <script
