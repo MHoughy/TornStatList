@@ -53,8 +53,8 @@
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background: #fff;
     z-index: 2;
+    background-color: #fff; /* Ensure consistent background color */
     min-width: 100px;
   }
 
@@ -74,12 +74,13 @@
     table {
       display: block;
       overflow-x: auto;
+      overflow-y: hidden; /* Ensure no vertical scrolling */
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
       white-space: nowrap;
     }
 
     th, td {
       padding: 4px 8px;
-      text-align: left;
     }
   }
 
