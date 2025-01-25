@@ -45,35 +45,26 @@
     text-align: left;
   }
 
-  /* Ensuring the first two columns stay sticky */
-  th:first-child, td:first-child, 
-  th:nth-child(2), td:nth-child(2) {
+  /* Ensuring sticky columns for the first two columns and the last column */
+  .sticky { 
+    position: -webkit-sticky; /* for Safari */
     position: sticky;
-    left: 0;
-    background-color: white;
-    z-index: 2; /* Ensure these columns stay on top */
+    background-color: white; 
+    z-index: 2; 
   }
 
-  /* Ensuring the last column stays sticky */
-  th:last-child, td:last-child {
-    position: sticky;
-    right: 0;
-    background-color: white;
-    z-index: 1; /* Ensure these columns stay on top */
-  }
-
+  th:first-child, td:first-child { left: 0; }
+  th:nth-child(2), td:nth-child(2) { left: 60px; }
+  th:last-child, td:last-child { right: 0; }
+  
   @media (max-width: 640px) {
     table {
       display: block;
       overflow-x: auto;
       white-space: nowrap;
     }
-    th:first-child, td:first-child,
-    th:nth-child(2), td:nth-child(2),
-    th:last-child, td:last-child {
-      position: -webkit-sticky; /* for Safari */
-      position: sticky;
-      background-color: white;
+    th, td {
+      text-align: left;
     }
   }
 </style>
@@ -250,8 +241,8 @@
     <table class="divide-y divide-gray-300" style="width: 100%; table-layout: auto;">
       <thead>
         <tr>
-          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6">Player</th>
-          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Level</th>
+          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6 sticky">Player</th>
+          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sticky">Level</th>
           <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">BSP Total</th>
           <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Total</th>
           <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Strength</th>
@@ -260,7 +251,7 @@
           <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Dexterity</th>
           <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Spy Date</th>
           <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Status</th>
-          <th class="relative text-sm sr-only">Attack</th>
+          <th class="relative text-sm sr-only sticky">Attack</th>
         </tr>
       </thead>
       <tbody id="table-body">
@@ -269,6 +260,7 @@
     <p id="no-data-message" class="hidden px-3 py-3.5 text-sm text-gray-400 border-t border-gray-200">No data available.</p>
   </div>
 </div>
+
 
 
               </div>
