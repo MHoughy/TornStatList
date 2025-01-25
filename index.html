@@ -25,6 +25,37 @@
       .spin {
         animation: spin 1s linear infinite;
       }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead, tbody {
+      display: table;
+      width: 100%;
+    }
+
+    tr {
+      display: table-row;
+    }
+
+    th, td {
+      display: table-cell;
+      padding: 8px 16px;
+      text-align: left;
+    }
+
+    @media (max-width: 640px) {
+      thead, tbody, th, td, tr {
+        display: block;
+      }
+      th, td {
+        text-align: left; /* Or center, depending on your preference */
+      }
+      th {
+        display: table-cell;
+      }
+    }
     </style>
     <script
       defer
@@ -196,30 +227,30 @@
 
 <div id="data-table" class="py-4 px-4 sm:px-6 lg:px-8">
   <div class="overflow-x-auto">
-    <table style="width: 100%; table-layout: auto; display: block;" class="divide-y divide-gray-300">
-      <thead style="display: block; white-space: nowrap;">
+    <table class="divide-y divide-gray-300" style="width: 100%; table-layout: auto;">
+      <thead>
         <tr>
-          <th style="padding: 8px 16px; white-space: nowrap;" class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6">Player</th>
-          <th style="padding: 8px 16px; white-space: nowrap;" class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Level</th>
-          <th style="padding: 8px 16px; white-space: nowrap;" class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">BSP Total</th>
-          <th style="padding: 8px 16px; white-space: nowrap;" class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Total</th>
-          <th style="padding: 8px 16px; white-space: nowrap;" class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Strength</th>
-          <th style="padding: 8px 16px; white-space: nowrap;" class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Defense</th>
-          <th style="padding: 8px 16px; white-space: nowrap;" class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Speed</th>
-          <th style="padding: 8px 16px; white-space: nowrap;" class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Dexterity</th>
-          <th style="padding: 8px 16px; white-space: nowrap;" class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Spy Date</th>
-          <th style="padding: 8px 16px; white-space: nowrap;" class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Status</th>
-          <th style="padding: 8px 16px; white-space: nowrap;" class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Attack Link</th>
-          <th style="padding: 8px 16px; white-space: nowrap;" class="relative text-sm sr-only">Attack</th>
+          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6">Player</th>
+          <th class="lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Level</th>
+          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">BSP Total</th>
+          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Total</th>
+          <th class="lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Strength</th>
+          <th class="lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Defense</th>
+          <th class="lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Speed</th>
+          <th class="lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Dexterity</th>
+          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Spy Date</th>
+          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Status</th>
+          <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Attack Link</th>
+          <th class="relative text-sm sr-only">Attack</th>
         </tr>
       </thead>
-      <tbody id="table-body" style="display: block; overflow-y: auto;">
+      <tbody id="table-body" style="overflow-y: auto;">
       </tbody>
     </table>
     <p id="no-data-message" class="hidden px-3 py-3.5 text-sm text-gray-400 border-t border-gray-200">No data available.</p>
+  </div>
+</div>
 
-                  </div>
-                </div>
               </div>
 		<script>
 		// Function to parse numbers with optional abbreviations (e.g., 10k, 10M, 1000)
