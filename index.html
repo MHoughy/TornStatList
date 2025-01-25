@@ -13,12 +13,8 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 <style>
   @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   .spin {
@@ -29,6 +25,7 @@
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
+    visibility: visible; /* Ensure table visibility is set properly */
   }
 
   thead, tbody {
@@ -47,7 +44,8 @@
 
   .sticky {
     position: sticky;
-    /*background-color: white; */
+    top: 0; /* Adjust if needed */
+    background-color: white;
     z-index: 2;
     min-width: 100px; /* Added min-width */
   }
@@ -74,10 +72,15 @@
       text-align: left;
     }
   }
-  
+
   /* Additional styles to fix potential issues */
   .container {
     overflow: hidden; /* Prevents zoom issue */
+  }
+
+  /* Hiding the table when behind sticky elements */
+  .table-hidden {
+    visibility: hidden;
   }
 </style>
     <script
@@ -250,7 +253,7 @@
 
 <div id="data-table" class="py-4 px-4 sm:px-6 lg:px-8 container">
   <div class="overflow-x-auto">
-    <table class="divide-y divide-gray-300" style="width: 100%; table-layout: auto;">
+    <table class="divide-y divide-gray-300 table-hidden" style="width: 100%; table-layout: auto;">
       <thead>
         <tr>
           <th class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6 sticky">Player</th>
