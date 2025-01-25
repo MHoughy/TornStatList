@@ -196,76 +196,28 @@
 
 <div id="data-table" class="py-4 px-4 sm:px-6 lg:px-8">
   <div class="overflow-x-auto">
-    <table class="table-fixed min-w-full divide-y divide-gray-300">
-      <thead>
+    <table style="width: 100%; table-layout: auto;" class="divide-y divide-gray-300">
+      <thead style="display: block;">
         <tr>
-            <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6">
-              Player
-            </th>
-            <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 lg:table-cell">
-              Level
-            </th>
-            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300">
-              BSP Total 
-            </th>
-            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300">
-              Total
-            </th>
-                          <th
-                            scope="col"
-                            class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 lg:table-cell"
-                          >
-                            Strength
-                          </th>
-                          <th
-                            scope="col"
-                            class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 lg:table-cell"
-                          >
-                            Defense
-                          </th>
-                          <th
-                            scope="col"
-                            class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 lg:table-cell"
-                          >
-                            Speed
-                          </th>
-                          <th
-                            scope="col"
-                            class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 lg:table-cell"
-                          >
-                            Dexterity
-                          </th>
-                          <th
-                            scope="col"
-                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300"
-                          >
-                            Spy Date
-                          </th>
-                          <th
-                            scope="col"
-                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300"
-                          >
-                            Status 
-                          </th>
-                          <th
-                            scope="col"
-                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300"
-                          >
-                            Attack Link
-                          </th>
-            <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
-              <span class="sr-only">Attack</span>
-            </th>
-          </tr>
-        </thead>
-                      <tbody id="table-body"></tbody>
-                    </table>
-                    <p
-                      id="no-data-message"
-                      class="hidden px-3 py-3.5 text-sm text-gray-400 border-t border-gray-200"
-                    >
-                      No data available.
-                    </p>
+          <th style="padding: 8px 16px; white-space: nowrap;" class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6">Player</th>
+          <th style="padding: 8px 16px; white-space: nowrap;" class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Level</th>
+          <th style="padding: 8px 16px; white-space: nowrap;" class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">BSP Total</th>
+          <th style="padding: 8px 16px; white-space: nowrap;" class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Total</th>
+          <th style="padding: 8px 16px; white-space: nowrap;" class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Strength</th>
+          <th style="padding: 8px 16px; white-space: nowrap;" class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Defense</th>
+          <th style="padding: 8px 16px; white-space: nowrap;" class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Speed</th>
+          <th style="padding: 8px 16px; white-space: nowrap;" class="hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Dexterity</th>
+          <th style="padding: 8px 16px; white-space: nowrap;" class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Spy Date</th>
+          <th style="padding: 8px 16px; white-space: nowrap;" class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Status</th>
+          <th style="padding: 8px 16px; white-space: nowrap;" class="text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Attack Link</th>
+          <th style="padding: 8px 16px; white-space: nowrap;" class="relative text-sm sr-only">Attack</th>
+        </tr>
+      </thead>
+      <tbody id="table-body" style="display: block; max-height: 300px; overflow-y: auto;">
+      </tbody>
+    </table>
+    <p id="no-data-message" class="hidden px-3 py-3.5 text-sm text-gray-400 border-t border-gray-200">No data available.</p>
+
                   </div>
                 </div>
               </div>
