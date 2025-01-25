@@ -182,14 +182,14 @@
               </div>
               
 <div id="filter-section" class="my-4">
-  <label for="filter-input" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+  <label for="filter-input" class="block text-lg font-medium text-gray-700 dark:text-gray-300 mb-2">
     Filter by Total or BSP Total:
   </label>
   <input
     type="number"
     id="filter-input"
-    class="mt-1 p-2 block w-full sm:w-1/3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-    placeholder="Enter a minimum value"
+    class="mt-1 p-3 block w-full sm:w-1/2 lg:w-1/3 border border-gray-300 rounded-lg shadow-md focus:ring-indigo-500 focus:border-indigo-500 text-lg sm:text-base"
+    placeholder="Optional filter: Enter your total"
   />
 </div>
 
@@ -249,7 +249,7 @@
                 const bspTotal = parseFloat(row.children[2].textContent.trim());
                 const total = parseFloat(row.children[3].textContent.trim());
 
-              if (!filterValue || bspTotal >= filterValue || total >= filterValue) {
+              if (!filterValue || bspTotal <= filterValue || total <= filterValue) {
                 row.style.display = "";
                 visible = true;
               } else {
