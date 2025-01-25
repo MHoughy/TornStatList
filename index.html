@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zoo War Hit List</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-   <style>
+<style>
   @keyframes spin {
     from {
       transform: rotate(0deg);
@@ -28,6 +28,7 @@
   table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: auto;
   }
 
   thead, tbody {
@@ -45,12 +46,34 @@
     text-align: left;
   }
 
+  th, td:nth-child(1),
+  th, td:nth-child(2),
+  th, td:nth-last-child(1) {
+    position: sticky;
+    left: 0;
+    background-color: white; /* or your desired background color */
+    z-index: 1; /* Ensure these columns are on top */
+  }
+
   @media (max-width: 640px) {
     thead, tbody, tr, th, td {
       display: revert;
     }
     th, td {
       text-align: left; /* Or center, depending on your preference */
+    }
+    th, td:nth-child(1),
+    th, td:nth-child(2),
+    th, td:nth-last-child(1) {
+      position: sticky;
+      left: 0;
+      background-color: white; /* or your desired background color */
+      z-index: 1;
+    }
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
     }
   }
 </style>
