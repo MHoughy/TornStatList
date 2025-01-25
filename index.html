@@ -180,87 +180,53 @@
                   class="w-16 h-16 border-t-4 border-blue-600 border-solid rounded-full spin"
                 ></div>
               </div>
-              <div
-                id="data-table"
-                class="py-4 px-4 sm:px-6 lg:px-8 text-left hidden"
-              >
-                <div
-                  class="-mx-4 mt-10 ring-1 ring-gray-300 sm:mx-0 sm:rounded-lg"
-                >
-                  <div class="table-container overflow-x-auto w-full">
-                    <table
-                      class="table-fixed max-w-full min-w-full divide-y divide-gray-300"
-                    >
-                      <thead>
-                        <tr>
-                          <th
-                            scope="col"
-                            class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6"
-                          >
-                            Player
-                          </th>
-                          <th
-                            scope="col"
-                            class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 lg:table-cell"
-                          >
-                            Level
-                          </th>
-                          <th
-                            scope="col"
-                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300"
-                          >
-                            BSP Total 
-                          </th>
-                          <th
-                            scope="col"
-                            class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 lg:table-cell"
-                          >
-                            Spy Total
-                          </th>
-                          <th
-                            scope="col"
-                            class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 lg:table-cell"
-                          >
-                            Spy Strength
-                          </th>
-                          <th
-                            scope="col"
-                            class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 lg:table-cell"
-                          >
-                            Spy Defense
-                          </th>
-                          <th
-                            scope="col"
-                            class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 lg:table-cell"
-                          >
-                            Spy Speed
-                          </th>
-                          <th
-                            scope="col"
-                            class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 lg:table-cell"
-                          >
-                            Spy Dexterity
-                          </th>
-                          <th
-                            scope="col"
-                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300"
-                          >
-                            Spy Date
-                          </th>
-                          <th
-                            scope="col"
-                            class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300"
-                          >
-                            Status
-                          </th>
-                          <th
-                            scope="col"
-                            class="relative py-3.5 pl-3 pr-4 sm:pr-6"
-                          >
-                            <span class="sr-only">Attack</span>
-                          </th>
-                        </tr>
-                      </thead>
+              
+<div id="filter-section" class="my-4">
+  <label for="filter-input" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+    Filter by Total or BSP Total:
+  </label>
+  <input
+    type="number"
+    id="filter-input"
+    class="mt-1 p-2 block w-full sm:w-1/3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+    placeholder="Enter a minimum value"
+  />
+</div>
+
+<div
+  id="data-table"
+  class="py-4 px-4 sm:px-6 lg:px-8 text-left hidden"
+>
+  <div class="-mx-4 mt-10 ring-1 ring-gray-300 sm:mx-0 sm:rounded-lg">
+    <div class="table-container overflow-x-auto w-full">
+      <table
+        class="table-fixed max-w-full min-w-full divide-y divide-gray-300"
+      >
+        <thead>
+          <tr>
+            <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6">
+              Player
+            </th>
+            <th scope="col" class="hidden px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 lg:table-cell">
+              Level
+            </th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300">
+              BSP Total 
+            </th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300">
+              Total
+            </th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300">
+              Spy Date
+            </th>
+            <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300">
+              Status
+            </th>
+            <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
+              <span class="sr-only">Attack</span>
+            </th>
+          </tr>
+        </thead>
                       <tbody id="table-body"></tbody>
                     </table>
                     <p
@@ -272,6 +238,29 @@
                   </div>
                 </div>
               </div>
+            <script>
+              document.getElementById("filter-input").addEventListener("input", function () {
+              const filterValue = parseFloat(this.value);
+              const tableBody = document.getElementById("table-body");
+              const rows = tableBody.querySelectorAll("tr");
+              let visible = false;
+
+              rows.forEach((row) => {
+                const bspTotal = parseFloat(row.children[2].textContent.trim());
+                const total = parseFloat(row.children[3].textContent.trim());
+
+              if (!filterValue || bspTotal >= filterValue || total >= filterValue) {
+                row.style.display = "";
+                visible = true;
+              } else {
+                row.style.display = "none";
+                  }
+                });
+
+                const noDataMessage = document.getElementById("no-data-message");
+                noDataMessage.classList.toggle("hidden", visible);
+                });
+              </script>
             </div>
           </div>
         </div>
