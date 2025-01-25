@@ -268,13 +268,13 @@ function createTableRow(row, status, attackLink, index) {
                 <span>Total: ${row.BSP_total}</span>
             </div>
         </td>
-        <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.BSP_total}</td>
-        <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.total}</td>
-        <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.str}</td>
-        <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.def}</td>
-        <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.spd}</td>
-        <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.dex}</td>
-        <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.Spy_Date}</td>
+        <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.BSP_total}</td>
+        <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.total}</td>
+        <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.str}</td>
+        <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.def}</td>
+        <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.spd}</td>
+        <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.dex}</td>
+        <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.Spy_Date}</td>
         <td class="px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${status}</td>
         <td class="relative py-3.5 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 min-w-0 ${borderClass} sticky">${attackLink}</td>
     </tr>
