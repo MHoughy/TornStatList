@@ -69,6 +69,7 @@ async function fetchData() {
   const sortedUsers = usersWithStatus.sort((a, b) => {
     const aBSP = parseFloat(a.BSP_total) || 0;
     const bBSP = parseFloat(b.BSP_total) || 0;
+															   
 
     const aTotal = parseFloat(a.total) || 0;
     const bTotal = parseFloat(b.total) || 0;
@@ -160,8 +161,7 @@ function formatStatus(status) {
   } 
   else if (formattedStatus === "Abroad" || formattedStatus === "Traveling") {
     formattedStatus = status.description || formattedStatus; // Fallback to state if description is missing
-  }
-
+  }																								   
   return formattedStatus;
 }
 
@@ -218,74 +218,43 @@ function populateAPIKey() {
   }
 }
 
-//function createTableRow(row, status, attackLink, index) {
-//  const isNotFirst = index > 0;
-//  const borderClass = isNotFirst ? 'border-t border-gray-200' : '';
-//  
-//  return `
-//    <tr>
-//      <td class="relative py-4 pl-4 pr-3 text-sm sm:pl-6 min-w-0 ${borderClass} sticky">
-//        <div class="font-medium text-gray-900 dark:text-gray-300">
-//            <a href="https://www.torn.com/profiles.php?XID=${row.id}" target="_blank">
-//              ${row.name}
-//              <span class="ml-1 text-blue-600">[${row.id}]</span>
-//            </a>
-//        </div>
-//        <div class="mt-1 flex flex-col text-gray-500 dark:text-gray-300 sm:block lg:hidden">
-//            <span>Level: ${row.lvl}</span>
-//            <span>Total: ${row.BSP_total}</span>
-//        </div>
-//      </td>
-//      <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.lvl}</td>
-//      <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.BSP_total}</td>
-//      <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.total}</td>
-//      <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.str}</td>
-//      <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.def}</td>
-//      <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.spd}</td>
-//      <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.dex}</td>
-//      <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.Spy_Date}</td>
-//      <td class="px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">
-//        <div class="lg:hidden w-40">${status}</div>
-//        <div class="hidden lg:block w-40">${status}</div>
-//      </td>
-//      <td class="relative py-3.5 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 min-w-0 ${borderClass} sticky">
-//        ${attackLink}
-//      </td>
-//    </tr>
-//  `;
-//}
 function createTableRow(row, status, attackLink, index) {
   const isNotFirst = index > 0;
   const borderClass = isNotFirst ? 'border-t border-gray-200' : '';
+
   return `
-  <tr class="flex">
-      <td class="relative py-4 pl-4 pr-3 text-sm sm:pl-6 min-w-0 ${borderClass} sticky"
-          style="left: 0; width: 20%;">
-          <div class="font-medium text-gray-900 dark:text-gray-300">
-              <a href="https://www.torn.com/profiles.php?XID=${row.id}" target="_blank">${row.name} <span class="ml-1 text-blue-600">[${row.id}]</span></a>
-          </div>
-          <div class="mt-1 flex flex-col text-gray-500 dark:text-gray-300 sm:block lg:hidden">
-              <span>Level: ${row.lvl}</span>
-              <span>Total: ${row.BSP_total}</span>
-          </div>
+    <tr>
+      <td class="relative py-4 pl-4 pr-3 text-sm sm:pl-6 min-w-0 ${borderClass}">
+        <div class="font-medium text-gray-900 dark:text-gray-300">
+            <a href="https://www.torn.com/profiles.php?XID=${row.id}" target="_blank">
+              ${row.name}
+              <span class="ml-1 text-blue-600">[${row.id}]</span>
+            </a>
+        </div>
+        <div class="mt-1 flex flex-col text-gray-500 dark:text-gray-300 sm:block lg:hidden">
+            <span>Level: ${row.lvl}</span>
+            <span>Total: ${row.total}</span>
+        </div>
       </td>
-      <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}" style="width: 10%;">${row.BSP_total}</td>
-      <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}" style="width: 10%;">${row.total}</td>
-      <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}" style="width: 10%;">${row.str}</td>
-      <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}" style="width: 10%;">${row.def}</td>
-      <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}" style="width: 10%;">${row.spd}</td>
-      <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}" style="width: 10%;">${row.dex}</td>
-      <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}" style="width: 10%;">${row.Spy_Date}</td>
-      <td class="px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}" style="width: 10%;">${status}</td>
-      <td class="relative py-3.5 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 min-w-0 ${borderClass} sticky"
-          style="right: 0; width: 10%;">${attackLink}</td>
-  </tr>
+      <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.lvl}</td>
+      <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.BSP_total}</td>
+      <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.str}</td>
+      <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.def}</td>
+      <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.spd}</td>
+      <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.dex}</td>
+      <td class="px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">
+        <div class="sm:hidden w-40">${status}</div>
+        <div class="hidden sm:block w-40">${status}</div>
+      </td>
+      <td class="relative py-3.5 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 min-w-0 ${borderClass}">
+        ${attackLink}
+      </td>
+    </tr>
   `;
 }
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
   populateAPIKey();
   loadListNames();
 });
+//BALDR
