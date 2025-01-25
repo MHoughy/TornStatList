@@ -13,8 +13,12 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
 <style>
   @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   .spin {
@@ -45,6 +49,15 @@
     text-align: left;
   }
 
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: transparent; /* Ensure transparent background */
+    min-width: 100px;
+  }
+
   th:first-child, td:first-child {
     left: 0;
   }
@@ -57,57 +70,29 @@
     right: 0;
   }
 
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
+@media (max-width: 640px) {
+    .wrapper {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+    table {
+        width: 100%; /* Ensure table doesn't exceed parent width */
+        min-width: 600px; /* Optional to ensure all columns are visible */
+    }
 
-    /* Force table to not be like tables anymore */
-    table, thead, tbody, th, td, tr { 
-        display: block; 
+    th, td {
+      padding: 4px 8px;
     }
-    
-    /* Hide table headers (but not display: none;, for accessibility) */
-    thead tr { 
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
+  }
+
+@media (max-width: 360px) {
+    th, td {
+        padding: 2px 4px;
+        font-size: 0.875rem;
     }
-    
-    tr { border: 1px solid #ccc; }
-    
-    td { 
-        /* Behave  like a "row" */
-        border: none;
-        border-bottom: 1px solid #eee; 
-        position: relative;
-        padding-left: 50%; 
-    }
-    
-    td:before { 
-        /* Now like a table header */
-        position: absolute;
-        /* Top/left values mimic padding */
-        top: 6px;
-        left: 6px;
-        width: 45%; 
-        padding-right: 10px; 
-        white-space: nowrap;
-    }
-    
-    /*
-    Label the data
-    */
-    td:nth-of-type(1):before { content: "Player"; }
-    td:nth-of-type(2):before { content: "BSP Total"; }
-    td:nth-of-type(3):before { content: "Total"; }
-    td:nth-of-type(4):before { content: "Strength"; }
-    td:nth-of-type(5):before { content: "Defense?"; }
-    td:nth-of-type(6):before { content: "Speed"; }
-    td:nth-of-type(7):before { content: "Dexterity"; }
-    td:nth-of-type(8):before { content: "Spy Date"; }
-    td:nth-of-type(9):before { content: "Status"; }
-    td:nth-of-type(10):before { content: "Attack"; }
-}   
+}
+
   .container {
     overflow: hidden;
   }
@@ -285,7 +270,7 @@ only screen and (max-width: 760px),
     <table class="table-fixed divide-y divide-gray-300" style="width: 100%; table-layout: fixed;">
       <thead>
         <tr>
-          <th class="w-1/5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6">Player</th>
+          <th class="w-1/5 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 sm:pl-6 sticky">Player</th>
           <th class="w-1/10 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 hidden lg:table-cell">BSP Total</th>
           <th class="w-1/10 text-left text-sm font-semibold text-gray-900 dark:text-gray-300 hidden lg:table-cell">Total</th>
           <th class="w-1/10 hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Strength</th>
@@ -294,7 +279,7 @@ only screen and (max-width: 760px),
           <th class="w-1/10 hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Dexterity</th>
           <th class="w-1/10 hidden lg:table-cell text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Spy Date</th>
           <th class="w-1/10 text-left text-sm font-semibold text-gray-900 dark:text-gray-300">Status</th>
-          <th class="w-1/10 relative text-sm sr-only">Attack</th>
+          <th class="w-1/10 relative text-sm sr-only sticky">Attack</th>
         </tr>
       </thead>
       <tbody id="table-body">
@@ -303,7 +288,6 @@ only screen and (max-width: 760px),
     <p id="no-data-message" class="hidden px-3 py-3.5 text-sm text-gray-400 border-t border-gray-200">No data available.</p>
   </div>
 </div>
-
               </div>
 		<script>
 		// Function to parse numbers with optional abbreviations (e.g., 10k, 10M, 1000)
