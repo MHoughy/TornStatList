@@ -160,8 +160,8 @@
                             let visible = false;
 
                             rows.forEach((row) => {
-                                const bspTotal = parseFloat(row.children[1].textContent.trim()); // BSP Total column
-                                const total = parseFloat(row.children[2].textContent.trim()); // Total column
+                                const bspTotal = parseFloat(row.children[2].textContent.trim()); // BSP Total column
+                                const total = parseFloat(row.children[3].textContent.trim()); // Total column
 
                                 // If the filter is empty, show all rows. Otherwise, apply the filter.
                                 if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue || total <= parsedValue))) {
