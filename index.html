@@ -54,23 +54,20 @@
     position: sticky;
     top: 0;
     z-index: 2;
-    background-color: inherit; /* Use inherit instead of solid color */
+    background-color: transparent; /* Ensure transparent background */
     min-width: 100px;
   }
 
   th:first-child, td:first-child {
     left: 0;
-    background-color: var(--sticky-bg);
   }
 
   th:nth-child(2), td:nth-child(2) {
     left: 60px;
-    background-color: var(--sticky-bg);
   }
 
   th:last-child, td:last-child {
     right: 0;
-    background-color: var(--sticky-bg);
   }
 
   @media (max-width: 640px) {
@@ -96,44 +93,6 @@
 
   .container {
     overflow: hidden;
-  }
-
-  /* Dark Mode Styles */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --sticky-bg: #333; /* Dark background color */
-    }
-
-    table {
-      border-collapse: collapse;
-    }
-
-    th, td {
-      color: #fff;
-    }
-
-    .sticky {
-      background-color: inherit;
-    }
-
-    th:first-child, td:first-child,
-    th:nth-child(2), td:nth-child(2),
-    th:last-child, td:last-child {
-      background-color: var(--sticky-bg);
-    }
-  }
-
-  /* Light Mode Styles */
-  @media (prefers-color-scheme: light) {
-    :root {
-      --sticky-bg: #f1f1f1; /* Light background color */
-    }
-
-    th:first-child, td:first-child,
-    th:nth-child(2), td:nth-child(2),
-    th:last-child, td:last-child {
-      background-color: var(--sticky-bg);
-    }
   }
 </style>
     <script
