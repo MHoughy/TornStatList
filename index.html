@@ -45,12 +45,10 @@
     text-align: left;
   }
 
-  /* Ensuring sticky columns for the first two columns and the last column */
-  .sticky { 
-    position: -webkit-sticky; /* for Safari */
+  .sticky {
     position: sticky;
     background-color: white; 
-    z-index: 2; 
+    z-index: 2;
   }
 
   th:first-child, td:first-child { left: 0; }
@@ -260,9 +258,6 @@
     <p id="no-data-message" class="hidden px-3 py-3.5 text-sm text-gray-400 border-t border-gray-200">No data available.</p>
   </div>
 </div>
-
-
-
               </div>
 		<script>
 		// Function to parse numbers with optional abbreviations (e.g., 10k, 10M, 1000)
