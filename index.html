@@ -11,52 +11,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zoo War Hit List</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <style>
-      @keyframes spin {
-        from {
-          transform: rotate(0deg);
-        }
-
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      .spin {
-        animation: spin 1s linear infinite;
-      }
-    table {
-      width: 100%;
-      border-collapse: collapse;
+   <style>
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
     }
-
-    thead, tbody {
-      display: table;
-      width: 100%;
+    to {
+      transform: rotate(360deg);
     }
+  }
 
-    tr {
-      display: table-row;
+  .spin {
+    animation: spin 1s linear infinite;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead, tbody {
+    display: table-header-group;
+    width: 100%;
+  }
+
+  tr {
+    display: table-row;
+  }
+
+  th, td {
+    display: table-cell;
+    padding: 8px 16px;
+    text-align: left;
+  }
+
+  @media (max-width: 640px) {
+    thead, tbody, tr, th, td {
+      display: revert;
     }
-
     th, td {
-      display: table-cell;
-      padding: 8px 16px;
-      text-align: left;
+      text-align: left; /* Or center, depending on your preference */
     }
-
-    @media (max-width: 640px) {
-      thead, tbody, th, td, tr {
-        display: block;
-      }
-      th, td {
-        text-align: left; /* Or center, depending on your preference */
-      }
-      th {
-        display: table-cell;
-      }
-    }
-    </style>
+  }
+</style>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"
