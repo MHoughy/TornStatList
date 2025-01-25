@@ -259,8 +259,15 @@ function createTableRow(row, status, attackLink, index) {
     const borderClass = isNotFirst ? 'border-t border-gray-200' : '';
     return `
     <tr>
-        <td class="relative py-4 pl-4 pr-3 text-sm sm:pl-6 min-w-0 ${borderClass} sticky">${row.name}</td>
-        <td class="relative py-4 pl-4 pr-3 text-sm sm:pl-6 min-w-0 ${borderClass} sticky">${row.id}</td>
+        <td class="relative py-4 pl-4 pr-3 text-sm sm:pl-6 min-w-0 ${borderClass} sticky">
+            <div class="font-medium text-gray-900 dark:text-gray-300">
+                <a href="https://www.torn.com/profiles.php?XID=${row.id}" target="_blank">${row.name} <span class="ml-1 text-blue-600">[${row.id}]</span></a>
+            </div>
+            <div class="mt-1 flex flex-col text-gray-500 dark:text-gray-300 sm:block lg:hidden">
+                <span>Level: ${row.lvl}</span>
+                <span>Total: ${row.BSP_total}</span>
+            </div>
+        </td>
         <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.lvl}</td>
         <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.BSP_total}</td>
         <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.total}</td>
