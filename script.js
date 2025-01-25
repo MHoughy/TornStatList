@@ -177,7 +177,7 @@ function updateStatus() {
     if (updatedRemaining <= 0) {
       statusCell.textContent = "Okay";
       const userId = row.querySelector("a[href*='XID']").textContent.match(/\[(\d+)\]/)[1];
-      const attackLinkCell = row.querySelector("td:nth-child(10)");
+      const attackLinkCell = row.querySelector("td:nth-child(9)");
       attackLinkCell.innerHTML = createAttackLink(userId, "Okay");
     } else {
       const updatedMinutes = Math.floor(updatedRemaining / 60);
