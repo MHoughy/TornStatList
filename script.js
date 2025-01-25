@@ -168,7 +168,7 @@ function formatStatus(status) {
 function updateStatus() {
   const rows = document.querySelectorAll("#table-body tr");
   rows.forEach((row) => {
-    const statusCell = row.querySelector("td:nth-child(8)");
+    const statusCell = row.querySelector("td:nth-child(9)");
     const currentStatus = statusCell.textContent.trim();
     const remaining = parseHospitalTime(currentStatus);
     if (remaining === Infinity) return;
