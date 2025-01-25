@@ -21,124 +21,6 @@
         .spin {
             animation: spin 1s linear infinite;
         }
-
-			   
-						
-									  
-		 
-
-			   
-										
-						
-		 
-
-			   
-									 
-						
-		 
-
-			
-							   
-		 
-
-		   
-			
-							  
-							 
-		 
-
-													   
-				 
-									 
-							 
-				   
-					   
-										  
-											   
-							 
-		 
-
-														  
-				  
-						  
-							 
-		 
-
-										  
-			  
-			  
-			
-						  
-								
-						
-													  
-		 
-
-					   
-						
-					
-												   
-							 
-		 
-
-						
-						 
-					   
-															   
-		 
-
-					  
-					   
-					 
-												  
-							 
-		 
-
-		   
-			
-					
-							  
-							 
-								
-										  
-		 
-
-								   
-					  
-							   
-							
-																	 
-								 
-			 
-
-				   
-							
-													  
-								 
-													
-			 
-
-			   
-				
-								 
-														
-			 
-		 
-
-								   
-
-			   
-				
-								 
-																   
-									
-														  
-			 
-		 
-
-					
-							 
-											   
 		 
 </style>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
@@ -176,8 +58,8 @@
                     <h3 class="text-base font-medium tracking-wider">
                         <div class="max-w-2xl mx-auto">
                             <p>
-							This list is of members of the opposite faction with any spies and battlestat estimates from 
-							BSP some data might not show on mobile but totals always will :)
+				This list is of members of the opposite faction with any spies and battlestat estimates from 
+				BSP some data might not show on mobile but totals always will :)
 																																															
                             </p>
                         </div>
@@ -253,8 +135,8 @@
                             const match = value.match(regex);
                             if (!match) return NaN; // Invalid input
 
-                            const number = parseFloat(match[1]); // The numeric part
-                            const unit = match[2].toLowerCase(); // The unit (k, m, b)
+                            const number = parseFloat(match[2]); // The numeric part
+                            const unit = match[3].toLowerCase(); // The unit (k, m, b)
 
                             // Convert based on the unit
                             switch (unit) {
