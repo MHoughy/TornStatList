@@ -268,8 +268,8 @@ function createTableRow(row, status, attackLink, index) {
                 <span>Total: ${row.BSP_total}</span>
             </div>
         </td>
-        <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.BSP_total}</td>
-        <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.total}</td>
+        <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.BSP_total}</td>
+        <td class="lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.total}</td>
         <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.str}</td>
         <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.def}</td>
         <td class="hidden lg:table-cell px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 min-w-0 ${borderClass}">${row.spd}</td>
