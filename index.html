@@ -49,26 +49,29 @@
     text-align: left;
   }
 
-  .sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    background-color: transparent; /* Ensure transparent background */
-    min-width: 100px;
-  }
+/* Ensure all other required styling applies */
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: transparent; /* Ensure transparent background */
+}
 
-  th:first-child, td:first-child {
-    left: 0;
-  }
+/* The following CSS is primarily for table layout and row/column spacing */
+th:first-child, td:first-child {
+  left: 0; /* Ensure the first column is sticky */
+  min-width: 100px;
+}
 
   th:nth-child(2), td:nth-child(2) {
     left: 60px;
   }
 
-  th:last-child, td:last-child {
-    right: 0;
-  }
+th:last-child, td:last-child {
+  right: 0; /* Ensure the last column is sticky */
+  min-width: 100px;
+}
 
 @media (max-width: 640px) {
     .wrapper {
