@@ -323,7 +323,7 @@
 			const total = parseFloat(row.children[2].textContent.trim()); // Total column
 		
 			// If the filter is empty, show all rows. Otherwise, apply the filter.
-			if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue && total <= parsedValue))) {
+			if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue || total <= parsedValue))) {
 				row.style.display = ""; // Show the row
 				visible = true;
 			} else {
