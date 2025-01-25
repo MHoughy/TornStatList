@@ -26,30 +26,28 @@
   }
 
   table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
+    @apply w-full border-separate border-spacing-0;
   }
 
-  thead, tbody {
-    display: table-header-group;
-    width: 100%;
+  thead {
+    @apply table-header-group w-full;
+  }
+
+  tbody {
+    @apply table-row-group w-full;
   }
 
   tr {
-    display: table-row;
+    @apply table-row;
   }
 
   th, td {
-    padding: 8px 16px;
-    text-align: left;
+    @apply p-2 md:p-4 text-left;
   }
 
   .sticky {
-    position: sticky;
-    /*background-color: white; */
-    z-index: 2;
-    min-width: 100px; /* Added min-width */
+    @apply sticky z-2;
+    min-width: 100px;
   }
 
   th:first-child, td:first-child {
@@ -66,18 +64,21 @@
 
   @media (max-width: 640px) {
     table {
-      display: block;
-      overflow-x: auto;
-      white-space: nowrap;
+      @apply block overflow-x-auto whitespace-nowrap;
     }
     th, td {
-      text-align: left;
+      @apply text-left;
     }
   }
-  
-  /* Additional styles to fix potential issues */
+
+  @media (max-width: 360px) {
+    th, td {
+      @apply p-1 text-sm;
+    }
+  }
+
   .container {
-    overflow: hidden; /* Prevents zoom issue */
+    @apply overflow-hidden;
   }
 </style>
     <script
