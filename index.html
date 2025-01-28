@@ -161,10 +161,10 @@ document.getElementById("filter-input").addEventListener("input", function() {
             console.log("Card BSP Total:", bspTotal);
             console.log("Card Total:", total);
 
-            // If the filter is empty, show all cards. Otherwise, apply the filter.
             if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue || total <= parsedValue))) {
                 card.style.display = ""; // Show the card
                 visible = true;
+                console.log("Card visible:", card);
             } else {
                 card.style.display = "none"; // Hide the card
             }
@@ -177,10 +177,10 @@ document.getElementById("filter-input").addEventListener("input", function() {
             console.log("Row BSP Total:", bspTotal);
             console.log("Row Total:", total);
 
-            // If the filter is empty, show all rows. Otherwise, apply the filter.
             if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue || total <= parsedValue))) {
                 row.style.display = ""; // Show the row
                 visible = true;
+                console.log("Row visible:", row);
             } else {
                 row.style.display = "none"; // Hide the row
             }
