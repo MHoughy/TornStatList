@@ -155,9 +155,13 @@ document.getElementById("filter-input").addEventListener("input", function() {
 
     if (isCardView) {
         cards.forEach((card) => {
-            const bspTotal = parseFloat(card.querySelector(".bsp-total").textContent.trim()); // BSP Total value
-            const total = parseFloat(card.querySelector(".total").textContent.trim()); // Total value
+            const bspTotalElement = card.querySelector(".bsp-total");
+            const bspTotal = bspTotalElement ? parseFloat(bspTotalElement.textContent.trim()) : NaN; // BSP Total value
+            const totalElement = card.querySelector(".total");
+            const total = totalElement ? parseFloat(totalElement.textContent.trim()) : NaN; // Total value
 
+            console.log("Card BSP Total Element:", bspTotalElement ? bspTotalElement.textContent.trim() : "N/A");
+            console.log("Card Total Element:", totalElement ? totalElement.textContent.trim() : "N/A");
             console.log("Card BSP Total:", bspTotal);
             console.log("Card Total:", total);
 
@@ -174,6 +178,8 @@ document.getElementById("filter-input").addEventListener("input", function() {
             const bspTotal = parseFloat(row.children[2].textContent.trim()); // BSP Total column
             const total = parseFloat(row.children[3].textContent.trim()); // Total column
 
+            console.log("Row BSP Total Element:", row.children[2].textContent.trim());
+            console.log("Row Total Element:", row.children[3].textContent.trim());
             console.log("Row BSP Total:", bspTotal);
             console.log("Row Total:", total);
 
