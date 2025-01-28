@@ -230,7 +230,7 @@ function createCard(row, status, attackLink) {
       </div>
     </div>
   `;
-
+}
 function createTableRow(row, status, attackLink, index) {
   const isNotFirst = index > 0;
   const borderClass = isNotFirst ? 'border-t border-gray-200' : '';
