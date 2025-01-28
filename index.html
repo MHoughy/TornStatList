@@ -143,10 +143,17 @@ document.getElementById("filter-input").addEventListener("input", function() {
     const isCardView = cardContainer && cardContainer.style.display !== "none";
     let visible = false;
 
+    console.log("Filter value:", filterValue);
+    console.log("Parsed value:", parsedValue);
+    console.log("Is card view:", isCardView);
+
     if (isCardView) {
         cards.forEach((card) => {
             const bspTotal = parseFloat(card.querySelector(".bsp-total").textContent.trim()); // BSP Total value
             const total = parseFloat(card.querySelector(".total").textContent.trim()); // Total value
+
+            console.log("Card BSP Total:", bspTotal);
+            console.log("Card Total:", total);
 
             // If the filter is empty, show all cards. Otherwise, apply the filter.
             if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue || total <= parsedValue))) {
@@ -161,6 +168,9 @@ document.getElementById("filter-input").addEventListener("input", function() {
             const bspTotal = parseFloat(row.children[2].textContent.trim()); // BSP Total column
             const total = parseFloat(row.children[3].textContent.trim()); // Total column
 
+            console.log("Row BSP Total:", bspTotal);
+            console.log("Row Total:", total);
+
             // If the filter is empty, show all rows. Otherwise, apply the filter.
             if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue || total <= parsedValue))) {
                 row.style.display = ""; // Show the row
@@ -171,12 +181,16 @@ document.getElementById("filter-input").addEventListener("input", function() {
         });
     }
 
+    console.log("Visible:", visible);
+
     // Toggle the "no data available" message
     const noDataMessage = document.getElementById("no-data-message");
     if (noDataMessage) {
         noDataMessage.classList.toggle("hidden", visible);
+        console.log("No data message visibility:", !visible);
     }
 });
+
                     </script>
                 </div>
             </div>
