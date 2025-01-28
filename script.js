@@ -222,7 +222,8 @@ function createCard(row, status, attackLink) {
         </div>
         <div class="mt-1 flex flex-col text-gray-500 dark:text-gray-300">
           <span>Level: ${row.lvl}</span>
-          <span>Total: ${row.BSP_total}</span>
+          <span class="bsp-total">BSP Total: ${row.BSP_total}</span>
+          <span class="total">Total: ${row.total}</span>
           <span>Status: ${row.status}</span>
         </div>
         <div class="mt-2 text-sm text-center">
@@ -232,6 +233,7 @@ function createCard(row, status, attackLink) {
     </div>
   `;
 }
+
 function createTableRow(row, status, attackLink, index) {
   const isNotFirst = index > 0;
   const borderClass = isNotFirst ? 'border-t border-gray-200' : '';
