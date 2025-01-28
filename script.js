@@ -223,6 +223,7 @@ function createCard(row, status, attackLink) {
         <div class="mt-1 flex flex-col text-gray-500 dark:text-gray-300">
           <span>Level: ${row.lvl}</span>
           <span>Total: ${row.BSP_total}</span>
+          <span>Total: ${status}</span>
         </div>
         <div class="mt-2 text-sm text-center">
           ${attackLink}
