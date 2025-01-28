@@ -286,6 +286,7 @@ function renderLayout(rowsData) {
       container.innerHTML += createTableRow(row, status, attackLink, index);
     });
   }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   populateAPIKey();
