@@ -80,7 +80,7 @@
                             <input type="text" id="filter-input" class="mt-1 p-3 block w-full sm:w-1/2 lg:w-1/3 border border-gray-300 rounded-lg shadow-md focus:ring-indigo-500 focus:border-indigo-500 text-lg sm:text-base" placeholder="Optional filter: Enter your total (e.g. 10M)" style="width: 500px;" />
                         </div>
 
-                        <div id="data-table" class="py-4 px-4 sm:px-6 lg:px-8 text-left hidden">
+                        <div id="data-table" class="py-4 px-4 sm:px-6 lg:px-8 text-left hidden" data-view="cards">
                             <div class="-mx-4 mt-10 ring-1 ring-gray-300 sm:mx-0 sm:rounded-lg">
                                 <div class="table-container overflow-x-auto w-full">
                                     <table class="table-fixed max-w-full min-w-full divide-y divide-gray-300">
@@ -131,6 +131,12 @@ function parseAbbreviatedNumber(value) {
     }
 }
 
+// Function to determine if card view is enabled
+function isCardViewEnabled() {
+    const dataTable = document.querySelector("#data-table");
+    return dataTable.getAttribute("data-view") === "cards";
+}
+
 // Attach event listener to the input
 document.getElementById("filter-input").addEventListener("input", function() {
     const filterValue = this.value.trim(); // Get the input value
@@ -140,7 +146,7 @@ document.getElementById("filter-input").addEventListener("input", function() {
     const rows = tableBody ? tableBody.querySelectorAll("tr") : [];
     const cardContainer = dataTable.querySelector("#card-container");
     const cards = cardContainer ? cardContainer.querySelectorAll(".card") : [];
-    const isCardView = cardContainer && cardContainer.style.display !== "none";
+    const isCardView = isCardViewEnabled();
     let visible = false;
 
     console.log("Filter value:", filterValue);
@@ -190,7 +196,6 @@ document.getElementById("filter-input").addEventListener("input", function() {
         console.log("No data message visibility:", !visible);
     }
 });
-
                     </script>
                 </div>
             </div>
