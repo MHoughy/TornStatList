@@ -36,16 +36,14 @@ async function fetchData() {
   fetchButton.disabled = true;
   startCountdown();
 
-  const tableBody = document.getElementById("table-body");
-  tableBody.innerHTML = "";
-
   showLoadingIndicator();
   hideDataTable();
 
   try {
     const response = await fetch("data.json");
     const data = await response.json();
-    tableData = data[selectedList];
+    const tableData = data[selectedList];
+
     if (tableData.length === 0) {
       displayNoDataMessage();
       hideLoadingIndicator();
@@ -60,30 +58,24 @@ async function fetchData() {
         const status = formatStatus(userData.status);
         return { ...row, status };
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching user data:", error);
       }
     });
 
     const usersWithStatus = await Promise.all(userPromises);
 
-  const sortedUsers = usersWithStatus.sort((a, b) => {
-    const aBSP = parseFloat(a.BSP_total) || 0;
-    const bBSP = parseFloat(b.BSP_total) || 0;
-															   
-
-    const aTotal = parseFloat(a.total) || 0;
-    const bTotal = parseFloat(b.total) || 0;
-
-  // Sort by BSP_total first if available, otherwise fallback to total
-    if (aBSP !== bBSP) return bBSP - aBSP;
-    return bTotal - aTotal;
-  });
-
-    sortedUsers.forEach((user, index) => {
-      const attackLink = createAttackLink(user.id, user.status);
-      const newRow = createTableRow(user, user.status, attackLink, index);
-      tableBody.innerHTML += newRow;
+    // Sorting users
+    const sortedUsers = usersWithStatus.sort((a, b) => {
+      const aBSP = parseFloat(a.BSP_total) || 0;
+      const bBSP = parseFloat(b.BSP_total) || 0;
+      const aTotal = parseFloat(a.total) || 0;
+      const bTotal = parseFloat(b.total) || 0;
+      
+      if (aBSP !== bBSP) return bBSP - aBSP;
+      return bTotal - aTotal;
     });
+
+    renderLayout(sortedUsers); // Using renderLayout instead of direct row creation
 
     hideNoDataMessage();
     displayDataTable();
@@ -98,7 +90,6 @@ async function fetchData() {
     console.error("Error fetching data:", error);
     hideLoadingIndicator();
   }
-}
 
 function startCountdown() {
   const fetchButton = document.getElementById("fetch-button");
@@ -218,6 +209,27 @@ function populateAPIKey() {
   }
 }
 
+function createCard(row, status, attackLink) {
+  return `
+    <div class="card mb-4 border border-gray-200 p-4 rounded-lg shadow-sm">
+      <div class="text-sm sm:hidden">
+        <div class="font-medium text-gray-900 dark:text-gray-300">
+          <a href="https://www.torn.com/profiles.php?XID=${row.id}" target="_blank">
+            ${row.name}
+            <span class="ml-1 text-blue-600">[${row.id}]</span>
+          </a>
+        </div>
+        <div class="mt-1 flex flex-col text-gray-500 dark:text-gray-300">
+          <span>Level: ${row.lvl}</span>
+          <span>Total: ${row.BSP_total}</span>
+        </div>
+        <div class="mt-2 text-sm text-center">
+          ${attackLink}
+        </div>
+      </div>
+    </div>
+  `;
+
 function createTableRow(row, status, attackLink, index) {
   const isNotFirst = index > 0;
   const borderClass = isNotFirst ? 'border-t border-gray-200' : '';
@@ -252,6 +264,8 @@ function createTableRow(row, status, attackLink, index) {
     </tr>
   `;
 }
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   populateAPIKey();
