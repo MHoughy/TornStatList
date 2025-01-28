@@ -266,7 +266,26 @@ function createTableRow(row, status, attackLink, index) {
   `;
 }
 
+// Function to render the appropriate layout based on screen size
+function renderLayout(rowsData) {
+  const container = document.getElementById('data-container');
+  container.innerHTML = '';
 
+  const isSmallScreen = window.matchMedia('(max-width: 640px)').matches;
+
+  if (isSmallScreen) {
+    rowsData.forEach((row, index) => {
+      const status = getStatus(row); // Update with your actual status retrieval function
+      const attackLink = getAttackLink(row); // Update with your actual attack link retrieval function
+      container.innerHTML += createCard(row, status, attackLink);
+    });
+  } else {
+    rowsData.forEach((row, index) => {
+      const status = getStatus(row);
+      const attackLink = getAttackLink(row);
+      container.innerHTML += createTableRow(row, status, attackLink, index);
+    });
+  }
 
 document.addEventListener("DOMContentLoaded", () => {
   populateAPIKey();
