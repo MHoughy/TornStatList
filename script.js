@@ -288,14 +288,14 @@ function renderLayout(rowsData) {
     rowsData.forEach((row, index) => {
       console.log('Card row data:', row); // ADD THIS LINE
       const status = formatStatus(row.status); // Using formatStatus function
-      const attackLink = createAttackLink(row.id, status); // Using createAttackLink function
+      const attackLink = createAttackLink(row.id, row.status); // Using createAttackLink function
       cardsContainer.innerHTML += createCard(row, status, attackLink);
     });
   } else {
     rowsData.forEach((row, index) => {
       console.log('Table row data:', row); // ADD THIS LINE
       const status = formatStatus(row.status); // Using formatStatus function
-      const attackLink = createAttackLink(row.id, status); // Using createAttackLink function
+      const attackLink = createAttackLink(row.id, row.status); // Using createAttackLink function
       tableBody.innerHTML += createTableRow(row, status, attackLink, index);
     });
   }
