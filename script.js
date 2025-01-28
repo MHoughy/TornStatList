@@ -90,6 +90,7 @@ async function fetchData() {
     console.error("Error fetching data:", error);
     hideLoadingIndicator();
   }
+}
 
 function startCountdown() {
   const fetchButton = document.getElementById("fetch-button");
