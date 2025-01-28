@@ -135,9 +135,10 @@ function parseAbbreviatedNumber(value) {
 document.getElementById("filter-input").addEventListener("input", function() {
     const filterValue = this.value.trim(); // Get the input value
     const parsedValue = parseAbbreviatedNumber(filterValue); // Parse the value
-    const tableBody = document.getElementById("table-body");
+    const dataTable = document.querySelector("#data-table");
+    const tableBody = dataTable.querySelector("#table-body");
     const rows = tableBody ? tableBody.querySelectorAll("tr") : [];
-    const cardContainer = document.getElementById("card-container");
+    const cardContainer = dataTable.querySelector("#card-container");
     const cards = cardContainer ? cardContainer.querySelectorAll(".card") : [];
     const isCardView = cardContainer && cardContainer.style.display !== "none";
     let visible = false;
@@ -176,7 +177,6 @@ document.getElementById("filter-input").addEventListener("input", function() {
         noDataMessage.classList.toggle("hidden", visible);
     }
 });
-
                     </script>
                 </div>
             </div>
