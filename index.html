@@ -28,26 +28,6 @@
 </head>
 
 <body class="bg-gray-50 dark:bg-gray-900 font-sans leading-normal text-gray-800 dark:text-gray-200 overflow-x-hidden">
-    <!--<div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full">
-        <div class="relative h-full max-w-7xl w-full mx-auto">
-            <svg class="absolute right-full transform translate-y-1/8 translate-x-1/8 lg:translate-x-1/4" width="404" height="784" fill="none" viewBox="0 0 404 784">
-                <defs>
-                    <pattern id="left-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                        <rect x="0" y="0" width="4" height="4" class="text-gray-200 dark:text-gray-800" fill="currentColor"></rect>
-                    </pattern>
-                </defs>
-                <rect width="404" height="784" fill="url(#left-pattern)"></rect>
-            </svg>
-            <svg class="absolute left-full transform -translate-y-1/2 -translate-x-1/8 md:-translate-y-1/2 lg:-translate-x-1/4" width="404" height="784" fill="none" viewBox="0 0 404 784">
-                <defs>
-                    <pattern id="right-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                        <rect x="0" y="0" width="4" height="4" class="text-gray-200 dark:text-gray-800" fill="currentColor"></rect>
-                    </pattern>
-                </defs>
-                <rect width="404" height="784" fill="url(#right-pattern)"></rect>
-            </svg>
-        </div>
-    </div>-->
     <div class="relative flex flex-col min-h-screen py-12 px-2 sm:px-6 lg:px-8">
         <div class="flex items-center justify-center">
             <div class="flex flex-col justify-around">
@@ -129,48 +109,66 @@
                         </div>
                     </div>
                     <script>
-                        // Function to parse numbers with optional abbreviations (e.g., 10k, 10M, 1000)
-                        function parseAbbreviatedNumber(value) {
-                            const regex = /^(\d+(?:\.\d+)?)([kKmMbB]?)$/; // Matches numbers with optional units (k, M, B)
-                            const match = value.match(regex);
-                            if (!match) return NaN; // Invalid input
+       // Function to parse numbers with optional abbreviations (e.g., 10k, 10M, 1000)
+function parseAbbreviatedNumber(value) {
+    const regex = /^(\d+(?:\.\d+)?)([kKmMbB]?)$/; // Matches numbers with optional units (k, M, B)
+    const match = value.match(regex);
+    if (!match) return NaN; // Invalid input
 
-                            const number = parseFloat(match[1]); // The numeric part
-                            const unit = match[2].toLowerCase(); // The unit (k, m, b)
+    const number = parseFloat(match[1]); // The numeric part
+    const unit = match[2].toLowerCase(); // The unit (k, m, b)
 
-                            // Convert based on the unit
-                            switch (unit) {
-                                case "k":
-                                    return number * 1_000;
-                                case "m":
-                                    return number * 1_000_000;
-                                case "b":
-                                    return number * 1_000_000_000;
-                                default:
-                                    return number; // No unit means it's a plain number
-                            }
-                        }
+    // Convert based on the unit
+    switch (unit) {
+        case "k":
+            return number * 1_000;
+        case "m":
+            return number * 1_000_000;
+        case "b":
+            return number * 1_000_000_000;
+        default:
+            return number; // No unit means it's a plain number
+    }
+}
 
-                        // Attach event listener to the input
-                        document.getElementById("filter-input").addEventListener("input", function() {
-                            const filterValue = this.value.trim(); // Get the input value
-                            const parsedValue = parseAbbreviatedNumber(filterValue); // Parse the value
-                            const tableBody = document.getElementById("table-body");
-                            const rows = tableBody.querySelectorAll("tr");
-                            let visible = false;
+// Attach event listener to the input
+document.getElementById("filter-input").addEventListener("input", function() {
+    const filterValue = this.value.trim(); // Get the input value
+    const parsedValue = parseAbbreviatedNumber(filterValue); // Parse the value
+    const tableBody = document.getElementById("table-body");
+    const rows = tableBody?.querySelectorAll("tr") || [];
+    const cardContainer = document.getElementById("card-container");
+    const cards = cardContainer?.querySelectorAll(".card") || [];
+    const isCardView = cardContainer.style.display !== "none";
+    let visible = false;
 
-                            rows.forEach((row) => {
-                                const bspTotal = parseFloat(row.children[2].textContent.trim()); // BSP Total column
-                                const total = parseFloat(row.children[3].textContent.trim()); // Total column
+    if (isCardView) {
+        cards.forEach((card) => {
+            const bspTotal = parseFloat(card.querySelector(".bsp-total").textContent.trim()); // BSP Total value
+            const total = parseFloat(card.querySelector(".total").textContent.trim()); // Total value
 
-                                // If the filter is empty, show all rows. Otherwise, apply the filter.
-                                if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue || total <= parsedValue))) {
-                                    row.style.display = ""; // Show the row
-                                    visible = true;
-                                } else {
-                                    row.style.display = "none"; // Hide the row
-                                }
-                            });
+            // If the filter is empty, show all cards. Otherwise, apply the filter.
+            if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue || total <= parsedValue))) {
+                card.style.display = ""; // Show the card
+                visible = true;
+            } else {
+                card.style.display = "none"; // Hide the card
+            }
+        });
+    } else {
+        rows.forEach((row) => {
+            const bspTotal = parseFloat(row.children[2].textContent.trim()); // BSP Total column
+            const total = parseFloat(row.children[3].textContent.trim()); // Total column
+
+            // If the filter is empty, show all rows. Otherwise, apply the filter.
+            if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue || total <= parsedValue))) {
+                row.style.display = ""; // Show the row
+                visible = true;
+            } else {
+                row.style.display = "none"; // Hide the row
+            }
+        });
+    }
 
                             // Toggle the "no data available" message
                             const noDataMessage = document.getElementById("no-data-message");
