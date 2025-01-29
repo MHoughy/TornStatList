@@ -144,7 +144,7 @@ document.getElementById("filter-input").addEventListener("input", function() {
     const dataTable = document.querySelector("#data-table");
     const tableBody = dataTable.querySelector("#table-body");
     const rows = tableBody ? tableBody.querySelectorAll("tr") : [];
-    const cardContainer = dataTable.querySelector("#card-container");
+    const cardContainer = document.getElementById("cards-container");
     const cards = cardContainer ? cardContainer.querySelectorAll(".card") : [];
     const isCardView = isCardViewEnabled();
     let visible = false;
