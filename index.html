@@ -131,6 +131,13 @@ function parseAbbreviatedNumber(value) {
     }
 }
 
+// Function to extract numerical values from text
+function extractNumericValue(element) {
+    const text = element ? element.textContent.trim() : "";
+    const numericPart = text.replace(/[^\d.]/g, ""); // Remove non-numeric characters
+    return parseFloat(numericPart) || NaN;
+}
+
 // Function to determine if card view is enabled
 function isCardViewEnabled() {
     const dataTable = document.querySelector("#data-table");
@@ -155,13 +162,9 @@ document.getElementById("filter-input").addEventListener("input", function() {
 
     if (isCardView) {
         cards.forEach((card) => {
-            const bspTotalElement = card.querySelector(".bsp-total");
-            const bspTotal = bspTotalElement ? parseFloat(bspTotalElement.textContent.trim()) : NaN; // BSP Total value
-            const totalElement = card.querySelector(".total");
-            const total = totalElement ? parseFloat(totalElement.textContent.trim()) : NaN; // Total value
+            const bspTotal = extractNumericValue(card.querySelector(".bsp-total")); // Extract BSP Total value
+            const total = extractNumericValue(card.querySelector(".total")); // Extract Total value
 
-            console.log("Card BSP Total Element:", bspTotalElement ? bspTotalElement.textContent.trim() : "N/A");
-            console.log("Card Total Element:", totalElement ? totalElement.textContent.trim() : "N/A");
             console.log("Card BSP Total:", bspTotal);
             console.log("Card Total:", total);
 
@@ -175,11 +178,9 @@ document.getElementById("filter-input").addEventListener("input", function() {
         });
     } else {
         rows.forEach((row) => {
-            const bspTotal = parseFloat(row.children[2].textContent.trim()); // BSP Total column
-            const total = parseFloat(row.children[3].textContent.trim()); // Total column
+            const bspTotal = extractNumericValue(row.querySelector(".bsp-total")); // Extract BSP Total value
+            const total = extractNumericValue(row.querySelector(".total")); // Extract Total value
 
-            console.log("Row BSP Total Element:", row.children[2].textContent.trim());
-            console.log("Row Total Element:", row.children[3].textContent.trim());
             console.log("Row BSP Total:", bspTotal);
             console.log("Row Total:", total);
 
