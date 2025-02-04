@@ -193,6 +193,41 @@ function hideDataTable() {
   const dataTable = document.getElementById("data-table");
   dataTable.classList.add("hidden");
 }
+function FormatBattleStats(number) {
+    //number = 10000000000
+    var localized = AddComma(number)
+    var myArray = localized.split(",");
+    if (myArray.length < 1) {
+        return 'ERROR';
+    }
+
+    var toReturn = myArray[0];
+    if (number < 1000) return number;
+    if (parseInt(toReturn) < 10) {
+        if (parseInt(myArray[1][0]) != 0) {
+            toReturn += '.' + myArray[1][0];
+        }
+    }
+    switch (myArray.length) {
+        case 2:
+            toReturn += "K";
+            break;
+        case 3:
+            toReturn += "M";
+            break;
+        case 4:
+            toReturn += "B";
+            break;
+        case 5:
+            toReturn += "T";
+            break;
+        case 6:
+            toReturn += "Q";
+            break;
+    }
+    //Logger.log(toReturn)
+    return toReturn;
+}
 
 function createAttackLink(id, status) {
   const isDisabled = status !== "Okay";
@@ -222,7 +257,7 @@ function createCard(row, status, attackLink) {
         </div>
         <div class="mt-1 flex flex-col text-gray-500 dark:text-gray-300">
           <span>Level: ${row.lvl}</span>
-          <span class="bsp-total">BSP Total: ${row.BSP_total}</span>
+          <span class="bsp-total">BSP Total: ${row.BSP_total} - (${FormatBattleStats(row.BSP_total)})</span>
           <span class="total">Total: ${row.total}</span>
           <span>Status: ${row.status}</span>
         </div>
@@ -249,11 +284,11 @@ function createTableRow(row, status, attackLink, index) {
         </div>
         <div class="mt-1 flex flex-col text-gray-500 dark:text-gray-300 sm:block lg:hidden">
             <span>Level: ${row.lvl}</span>
-            <span>Total: ${row.BSP_total}</span>
+            <span>Total: ${row.BSP_total} - (${FormatBattleStats(row.BSP_total)})</span>
         </div>
       </td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.lvl}</td>
-      <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.BSP_total}</td>
+      <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.BSP_total} - (${FormatBattleStats(row.BSP_total)})</td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.str}</td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.def}</td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.spd}</td>
