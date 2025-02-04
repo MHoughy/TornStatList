@@ -111,6 +111,7 @@
                         </div>
                     </div>
                     <script>
+		 
 // Function to parse numbers with optional abbreviations (e.g., 10k, 10M, 1000)
 function parseAbbreviatedNumber(value) {
     const regex = /^(\d+(?:\.\d+)?)([kKmMbB]?)$/; // Matches numbers with optional units (k, M, B)
@@ -137,8 +138,8 @@ function parseAbbreviatedNumber(value) {
 function extractNumericValue(element) {
     if (!element) return NaN;
     const text = element.textContent.trim();
-    const numericPart = text.replace(/[^0-9.]/g, ""); // Remove non-numeric characters except dots
-    return parseAbbreviatedNumber(numericPart);
+    const numericPart = text.split(' - ')[0].replace(/[^0-9.]/g, ""); // Remove non-numeric characters except dots
+    return parseFloat(numericPart.replace(/,/g, '')); // Remove commas and parse number
 }
 
 // Attach event listener to the input
@@ -150,9 +151,6 @@ document.getElementById("filter-input").addEventListener("input", function() {
     const rows = tableBody ? tableBody.querySelectorAll("tr") : [];
     const cardContainer = document.getElementById("cards-container");
     const cards = cardContainer ? cardContainer.querySelectorAll(".card") : [];
-																				
-															 
-												   
     let visible = false;
 
     console.log("Filter value:", filterValue);
@@ -189,7 +187,6 @@ document.getElementById("filter-input").addEventListener("input", function() {
         }
     });
 
-
     console.log("Visible:", visible);
 
     // Toggle the "no data available" message
@@ -199,6 +196,7 @@ document.getElementById("filter-input").addEventListener("input", function() {
         console.log("No data message visibility:", !visible);
     }
 });
+
 
                     </script>
                 </div>
