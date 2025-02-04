@@ -264,7 +264,7 @@ function createCard(row, status, attackLink) {
         </div>
         <div class="mt-1 flex flex-col text-gray-500 dark:text-gray-300">
           <span>Level: ${row.lvl}</span>
-          <span class="bsp-total">BSP Total: ${row.BSP_total} - (${FormatBattleStats(row.BSP_total)})</span>
+          <span class="bsp-total">BSP Total: ${AddComma(row.BSP_total)} - (${FormatBattleStats(row.BSP_total)})</span>
           <span class="total">Total: ${row.total}</span>
           <span>Status: ${row.status}</span>
         </div>
@@ -291,11 +291,11 @@ function createTableRow(row, status, attackLink, index) {
         </div>
         <div class="mt-1 flex flex-col text-gray-500 dark:text-gray-300 sm:block lg:hidden">
             <span>Level: ${row.lvl}</span>
-            <span>Total: ${row.BSP_total} - (${FormatBattleStats(row.BSP_total)})</span>
+            <span>Total: ${AddComma(row.BSP_total)} - (${FormatBattleStats(row.BSP_total)})</span>
         </div>
       </td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.lvl}</td>
-      <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.BSP_total} - (${FormatBattleStats(row.BSP_total)})</td>
+      <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${AddComma(row.BSP_total)} - (${FormatBattleStats(row.BSP_total)})</td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.str}</td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.def}</td>
       <td class="hidden px-3 py-3.5 text-sm text-gray-500 dark:text-gray-300 lg:table-cell min-w-0 ${borderClass}">${row.spd}</td>
