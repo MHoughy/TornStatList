@@ -133,11 +133,12 @@ function parseAbbreviatedNumber(value) {
     }
 }
 
-// Function to extract numerical values from text
+// Function to extract numerical values from text, including formatted numbers
 function extractNumericValue(element) {
-    const text = element ? element.textContent.trim() : "";
-    const numericPart = text.replace(/[^\d.]/g, ""); // Remove non-numeric characters
-    return parseFloat(numericPart) || NaN;
+    if (!element) return NaN;
+    const text = element.textContent.trim();
+    const numericPart = text.replace(/[^0-9.]/g, ""); // Remove non-numeric characters except dots
+    return parseAbbreviatedNumber(numericPart);
 }
 
 // Attach event listener to the input
@@ -149,11 +150,13 @@ document.getElementById("filter-input").addEventListener("input", function() {
     const rows = tableBody ? tableBody.querySelectorAll("tr") : [];
     const cardContainer = document.getElementById("cards-container");
     const cards = cardContainer ? cardContainer.querySelectorAll(".card") : [];
-    const parsedValue1 = parseAbbreviatedNumber(filterValue); // Parse the value
-    const tableBody1 = document.getElementById("table-body");
-    const rows1 = tableBody.querySelectorAll("tr");
+																				
+															 
+												   
     let visible = false;
 
+    console.log("Filter value:", filterValue);
+    console.log("Parsed value:", parsedValue);
 
     // Apply filter to cards
     cards.forEach((card) => {
@@ -162,8 +165,7 @@ document.getElementById("filter-input").addEventListener("input", function() {
 
         console.log("Card BSP Total:", bspTotal);
         console.log("Card Total:", total);
-	console.log("Filter value:", filterValue);
-    	console.log("Parsed value:", parsedValue);
+
         if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue))) {
             card.style.display = ""; // Show the card
             visible = true;
@@ -175,14 +177,9 @@ document.getElementById("filter-input").addEventListener("input", function() {
 
     // Apply filter to table rows
     rows.forEach((row) => {
-        const bspTotal = parseFloat(row.children[2].textContent.trim()); // BSP Total column
-        const total = parseFloat(row.children[3].textContent.trim()); // Total column
+        const bspTotal = extractNumericValue(row.children[2]); // BSP Total column
+        const total = extractNumericValue(row.children[3]); // Total column
 
-	console.log("Table BSP Total:", bspTotal);
-        console.log("Table Total:", total);
-	console.log("Filter value:", filterValue);
-    	console.log("Parsed value:", parsedValue);
-	
         // If the filter is empty, show all rows. Otherwise, apply the filter.
         if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue))) {
             row.style.display = ""; // Show the row
@@ -202,6 +199,7 @@ document.getElementById("filter-input").addEventListener("input", function() {
         console.log("No data message visibility:", !visible);
     }
 });
+
                     </script>
                 </div>
             </div>
