@@ -113,11 +113,11 @@
                     <script>
 // Function to parse numbers with optional abbreviations (e.g., 10k, 10M, 1000)
 function parseAbbreviatedNumber(value) {
-    const regex = /^(\d+(?:\.\d+)?)([kKmMbB]?)$/; // Matches numbers with optional units (k, M, B)
+    const regex = /^(\d{1,3}(?:,\d{3})*(?:\.\d+)?)([kKmMbB]?)$/; // Matches numbers with optional commas and units (k, M, B)
     const match = value.match(regex);
     if (!match) return NaN; // Invalid input
 
-    const number = parseFloat(match[1]); // The numeric part
+    const number = parseFloat(match[1].replace(/,/g, '')); // The numeric part with commas removed
     const unit = match[2].toLowerCase(); // The unit (k, m, b)
 
     // Convert based on the unit
@@ -136,8 +136,8 @@ function parseAbbreviatedNumber(value) {
 // Function to extract numerical values from text
 function extractNumericValue(element) {
     const text = element ? element.textContent.trim() : "";
-    const numericPart = text.replace(/[^\d.]/g, ""); // Remove non-numeric characters
-    return parseFloat(numericPart) || NaN;
+    const numericPart = text.replace(/[^\d.,]/g, ""); // Remove non-numeric characters except comma and dot
+    return parseFloat(numericPart.replace(/,/g, '')) || NaN; // Remove commas before parsing
 }
 
 // Attach event listener to the input
