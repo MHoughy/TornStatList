@@ -154,8 +154,6 @@ document.getElementById("filter-input").addEventListener("input", function() {
     const rows1 = tableBody.querySelectorAll("tr");
     let visible = false;
 
-    console.log("Filter value:", filterValue);
-    console.log("Parsed value:", parsedValue);
 
     // Apply filter to cards
     cards.forEach((card) => {
@@ -164,7 +162,8 @@ document.getElementById("filter-input").addEventListener("input", function() {
 
         console.log("Card BSP Total:", bspTotal);
         console.log("Card Total:", total);
-
+	console.log("Filter value:", filterValue);
+    	console.log("Parsed value:", parsedValue);
         if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue))) {
             card.style.display = ""; // Show the card
             visible = true;
@@ -179,6 +178,11 @@ document.getElementById("filter-input").addEventListener("input", function() {
         const bspTotal = parseFloat(row.children[2].textContent.trim()); // BSP Total column
         const total = parseFloat(row.children[3].textContent.trim()); // Total column
 
+	console.log("Table BSP Total:", bspTotal);
+        console.log("Table Total:", total);
+	console.log("Filter value:", filterValue);
+    	console.log("Parsed value:", parsedValue);
+	
         // If the filter is empty, show all rows. Otherwise, apply the filter.
         if (filterValue === "" || (!isNaN(parsedValue) && (bspTotal <= parsedValue))) {
             row.style.display = ""; // Show the row
