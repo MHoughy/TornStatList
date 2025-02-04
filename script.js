@@ -193,6 +193,13 @@ function hideDataTable() {
   const dataTable = document.getElementById("data-table");
   dataTable.classList.add("hidden");
 }
+
+function AddComma(num){ 
+    while (/(\d+)(\d{3})/.test(num.toString())){
+        num = num.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
+    }
+    return num;
+}
 function FormatBattleStats(number) {
     //number = 10000000000
     var localized = AddComma(number)
