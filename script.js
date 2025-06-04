@@ -247,19 +247,16 @@ function createAttackLink(id, status) {
 function populateAPIKey() {
   const urlParams = new URLSearchParams(window.location.search);
   const apiKey = urlParams.get('apiKey');
+  const statsFilter = urlParams.get('statsFilter'); //added
   if (apiKey) {
     document.getElementById("api-key").value = apiKey;
   }
-}
-// New section
-function populateStatFilter() {
-  const urlParams1 = new URLSearchParams(window.location.search);
-  const statFilter = urlParams.get('Statfilter');
+  // Section Added
   if (statFilter) {
-    document.getElementById("filter-input").value = Statfilter;
+    document.getElementById("filter-input").value = statsFilter;
   }
 }
-// End of new section
+
 function createCard(row, status, attackLink) {
   return `
     <div class="card mb-4 border border-gray-200 p-4 rounded-lg shadow-sm">
