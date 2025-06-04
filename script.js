@@ -252,7 +252,7 @@ function populateAPIKey() {
     document.getElementById("api-key").value = apiKey;
   }
   // Section Added
-  if (statFilter) {
+  if (statsFilter) {
     document.getElementById("filter-input").value = statsFilter;
   }
 }
