@@ -251,7 +251,15 @@ function populateAPIKey() {
     document.getElementById("api-key").value = apiKey;
   }
 }
-
+// New section
+function populateStatFilter() {
+  const urlParams1 = new URLSearchParams(window.location.search);
+  const statFilter = urlParams.get('Statfilter');
+  if (statFilter) {
+    document.getElementById("filter-input").value = Statfilter;
+  }
+}
+// End of new section
 function createCard(row, status, attackLink) {
   return `
     <div class="card mb-4 border border-gray-200 p-4 rounded-lg shadow-sm">
