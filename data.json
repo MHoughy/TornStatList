@@ -4,23 +4,865 @@
             "name": "TugaRambo",
             "id": "1291268",
             "lvl": "100",
-            "total": "",
-            "str": "",
-            "def": "",
-            "spd": "",
-            "dex": "",
-            "BSP_total": "2034344104"
+            "BSP_total": "2034344104",
+            "BSP_prediction_date": "2026-02-15",
+            "ff_bse": "2055759264",
+            "ff_updated": "2026-02-20"
         },
         {
             "name": "NN_",
             "id": "1429005",
             "lvl": "100",
-            "total": "",
-            "str": "",
-            "def": "",
-            "spd": "",
-            "dex": "",
-            "BSP_total": "6972081408"
+            "BSP_total": "6972081408",
+            "BSP_prediction_date": "2026-02-08",
+            "ff_bse": "7192987423",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "Girlshaker",
+            "id": "1993409",
+            "lvl": "100",
+            "BSP_total": "6212647802",
+            "BSP_prediction_date": "2026-01-23",
+            "ff_bse": "6271026428",
+            "ff_updated": "2026-01-23"
+        },
+        {
+            "name": "Tibit",
+            "id": "2023328",
+            "lvl": "67",
+            "BSP_total": "694663873",
+            "BSP_prediction_date": "2026-02-24",
+            "ff_bse": "562644514",
+            "ff_updated": "2025-12-20"
+        },
+        {
+            "name": "GojoSatoru",
+            "id": "2084723",
+            "lvl": "100",
+            "BSP_total": "10379367922",
+            "BSP_prediction_date": "2026-02-22",
+            "ff_bse": "10084092128",
+            "ff_updated": "2025-12-30"
+        },
+        {
+            "name": "Lion-Eljonson",
+            "id": "2085209",
+            "lvl": "95",
+            "BSP_total": "2579946174",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "2565173412",
+            "ff_updated": "2025-09-14"
+        },
+        {
+            "name": "Eldarian",
+            "id": "2114314",
+            "lvl": "94",
+            "BSP_total": "1175112300",
+            "BSP_prediction_date": "2026-01-24",
+            "ff_bse": "1186169904",
+            "ff_updated": "2026-01-24"
+        },
+        {
+            "name": "Xanus",
+            "id": "2135930",
+            "lvl": "45",
+            "BSP_total": "30419338",
+            "BSP_prediction_date": "2026-02-23",
+            "ff_bse": "28251542",
+            "ff_updated": "2026-02-09"
+        },
+        {
+            "name": "Horizon",
+            "id": "2143494",
+            "lvl": "74",
+            "BSP_total": "992737762",
+            "BSP_prediction_date": "2026-02-15",
+            "ff_bse": "1004863658",
+            "ff_updated": "2026-02-19"
+        },
+        {
+            "name": "SnoopDoggyDogg",
+            "id": "2160161",
+            "lvl": "99",
+            "BSP_total": "3609962130",
+            "BSP_prediction_date": "2025-08-02",
+            "ff_bse": "4231532624",
+            "ff_updated": "2026-01-09"
+        },
+        {
+            "name": "Ashmad",
+            "id": "2160486",
+            "lvl": "73",
+            "BSP_total": "384791874",
+            "BSP_prediction_date": "2026-02-22",
+            "ff_bse": "367088963",
+            "ff_updated": "2026-02-14"
+        },
+        {
+            "name": "Brewed",
+            "id": "2311234",
+            "lvl": "98",
+            "BSP_total": "4027622962",
+            "BSP_prediction_date": "2026-02-13",
+            "ff_bse": "4049380609",
+            "ff_updated": "2026-02-13"
+        },
+        {
+            "name": "Pixie-",
+            "id": "2342246",
+            "lvl": "99",
+            "BSP_total": "6546100976",
+            "BSP_prediction_date": "2025-12-13",
+            "ff_bse": "6399681164",
+            "ff_updated": "2025-12-13"
+        },
+        {
+            "name": "Atomicc",
+            "id": "2376594",
+            "lvl": "100",
+            "BSP_total": "1165676262",
+            "BSP_prediction_date": "2026-02-24",
+            "ff_bse": "1080055679",
+            "ff_updated": "2026-02-14"
+        },
+        {
+            "name": "Forestbomb",
+            "id": "2395670",
+            "lvl": "93",
+            "BSP_total": "738187034",
+            "BSP_prediction_date": "2026-02-13",
+            "ff_bse": "675014134",
+            "ff_updated": "2026-01-23"
+        },
+        {
+            "name": "Lag_Altrash",
+            "id": "2431115",
+            "lvl": "22",
+            "BSP_total": "824421241",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "807603495",
+            "ff_updated": "2026-01-23"
+        },
+        {
+            "name": "Silverstripe",
+            "id": "2450110",
+            "lvl": "86",
+            "BSP_total": "1850339215",
+            "BSP_prediction_date": "2026-02-23",
+            "ff_bse": "2157463009",
+            "ff_updated": "2026-01-24"
+        },
+        {
+            "name": "bigboimilos",
+            "id": "2501656",
+            "lvl": "100",
+            "BSP_total": "6630371677",
+            "BSP_prediction_date": "2026-01-24",
+            "ff_bse": "6759735467",
+            "ff_updated": "2026-02-13"
+        },
+        {
+            "name": "Zero_Hunters",
+            "id": "2506986",
+            "lvl": "75",
+            "BSP_total": "1060617395",
+            "BSP_prediction_date": "2026-02-22",
+            "ff_bse": "610375039",
+            "ff_updated": "2026-02-14"
+        },
+        {
+            "name": "Vig",
+            "id": "2522570",
+            "lvl": "100",
+            "BSP_total": "3268551072",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "3362855076",
+            "ff_updated": "2026-02-04"
+        },
+        {
+            "name": "Psyp",
+            "id": "2531523",
+            "lvl": "100",
+            "BSP_total": "2875501026",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "2840188855",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "HotChickOG",
+            "id": "2553355",
+            "lvl": "40",
+            "BSP_total": "1712394648",
+            "BSP_prediction_date": "2026-01-09",
+            "ff_bse": "1682187025",
+            "ff_updated": "2026-01-15"
+        },
+        {
+            "name": "JQuigley98",
+            "id": "2555341",
+            "lvl": "92",
+            "BSP_total": "1149364112",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "648986396",
+            "ff_updated": "2026-02-16"
+        },
+        {
+            "name": "Zellion",
+            "id": "2571968",
+            "lvl": "100",
+            "BSP_total": "2530951504",
+            "BSP_prediction_date": "2025-12-14",
+            "ff_bse": "2599948000",
+            "ff_updated": "2026-01-21"
+        },
+        {
+            "name": "Rg_elcat",
+            "id": "2573171",
+            "lvl": "85",
+            "BSP_total": "3198173883",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "3382102570",
+            "ff_updated": "2025-11-13"
+        },
+        {
+            "name": "Nospis",
+            "id": "2623414",
+            "lvl": "22",
+            "BSP_total": "3004648133",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "3015815400",
+            "ff_updated": "2026-02-14"
+        },
+        {
+            "name": "aloemon",
+            "id": "2629101",
+            "lvl": "100",
+            "BSP_total": "3026383316",
+            "BSP_prediction_date": "2025-11-22",
+            "ff_bse": "3359485023",
+            "ff_updated": "2026-02-17"
+        },
+        {
+            "name": "MJPQR",
+            "id": "2668185",
+            "lvl": "100",
+            "BSP_total": "3682274176",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "3714107904",
+            "ff_updated": "2026-02-14"
+        },
+        {
+            "name": "Smitty12",
+            "id": "2673919",
+            "lvl": "100",
+            "BSP_total": "5284708828",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "5337134160",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "Nemlep",
+            "id": "2678462",
+            "lvl": "45",
+            "BSP_total": "672676087",
+            "BSP_prediction_date": "2025-02-08",
+            "ff_bse": "1379510933",
+            "ff_updated": "2026-01-14"
+        },
+        {
+            "name": "Bruceybizzit",
+            "id": "2680138",
+            "lvl": "98",
+            "BSP_total": "2192467116",
+            "BSP_prediction_date": "2026-02-24",
+            "ff_bse": "1500535130",
+            "ff_updated": "2026-02-14"
+        },
+        {
+            "name": "Jackles",
+            "id": "2683257",
+            "lvl": "95",
+            "BSP_total": "3126671078",
+            "BSP_prediction_date": "2026-02-21",
+            "ff_bse": "2942343144",
+            "ff_updated": "2025-11-19"
+        },
+        {
+            "name": "PsychoticKingAJ",
+            "id": "2689874",
+            "lvl": "90",
+            "BSP_total": "853435618",
+            "BSP_prediction_date": "2026-02-21",
+            "ff_bse": "561822359",
+            "ff_updated": "2026-01-12"
+        },
+        {
+            "name": "Dagoombas_ian",
+            "id": "2693506",
+            "lvl": "50",
+            "BSP_total": "1512317197",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "1598105600",
+            "ff_updated": "2026-02-14"
+        },
+        {
+            "name": "Calvitore",
+            "id": "2698236",
+            "lvl": "15",
+            "BSP_total": "3990104848",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "3821271434",
+            "ff_updated": "2026-01-23"
+        },
+        {
+            "name": "sharker",
+            "id": "2703660",
+            "lvl": "46",
+            "BSP_total": "5120581",
+            "BSP_prediction_date": "2026-02-22",
+            "ff_bse": "1606851",
+            "ff_updated": "2026-02-17"
+        },
+        {
+            "name": "RedManAU",
+            "id": "2704135",
+            "lvl": "96",
+            "BSP_total": "1085425159",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "1031645181",
+            "ff_updated": "2026-02-24"
+        },
+        {
+            "name": "yurtas201",
+            "id": "2705879",
+            "lvl": "25",
+            "BSP_total": "428094009",
+            "BSP_prediction_date": "2026-02-23",
+            "ff_bse": "504092426",
+            "ff_updated": "2025-10-25"
+        },
+        {
+            "name": "Hespy",
+            "id": "2706760",
+            "lvl": "100",
+            "BSP_total": "2779140345",
+            "BSP_prediction_date": "2026-02-23",
+            "ff_bse": "2157131443",
+            "ff_updated": "2026-02-22"
+        },
+        {
+            "name": "AliG",
+            "id": "2713819",
+            "lvl": "95",
+            "BSP_total": "3100385336",
+            "BSP_prediction_date": "2026-02-22",
+            "ff_bse": "2370867737",
+            "ff_updated": "2025-12-17"
+        },
+        {
+            "name": "Pomalas1",
+            "id": "2731886",
+            "lvl": "94",
+            "BSP_total": "2877090978",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "1856113497",
+            "ff_updated": "2025-10-26"
+        },
+        {
+            "name": "JSousa77",
+            "id": "2733609",
+            "lvl": "100",
+            "BSP_total": "3031584754",
+            "BSP_prediction_date": "2026-02-23",
+            "ff_bse": "2747959146",
+            "ff_updated": "2026-01-10"
+        },
+        {
+            "name": "Nuit",
+            "id": "2736835",
+            "lvl": "100",
+            "BSP_total": "2073485332",
+            "BSP_prediction_date": "2025-11-23",
+            "ff_bse": "2057747996",
+            "ff_updated": "2025-10-26"
+        },
+        {
+            "name": "SenorSteeve",
+            "id": "2737879",
+            "lvl": "100",
+            "BSP_total": "4187046093",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "3804269416",
+            "ff_updated": "2025-11-22"
+        },
+        {
+            "name": "Recon-",
+            "id": "2741093",
+            "lvl": "100",
+            "BSP_total": "2669373197",
+            "BSP_prediction_date": "2026-01-25",
+            "ff_bse": "2490775854",
+            "ff_updated": "2025-11-27"
+        },
+        {
+            "name": "Sockrox",
+            "id": "2752642",
+            "lvl": "100",
+            "BSP_total": "3252614365",
+            "BSP_prediction_date": "2026-02-15",
+            "ff_bse": "3254804019",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "Alaurea",
+            "id": "2757834",
+            "lvl": "100",
+            "BSP_total": "1751972120",
+            "BSP_prediction_date": "2026-02-18",
+            "ff_bse": "1780968721",
+            "ff_updated": "2026-02-18"
+        },
+        {
+            "name": "yizhan-miki",
+            "id": "2758462",
+            "lvl": "69",
+            "BSP_total": "1535493831",
+            "BSP_prediction_date": "2026-02-15",
+            "ff_bse": "1551485911",
+            "ff_updated": "2026-02-17"
+        },
+        {
+            "name": "Dragonlite",
+            "id": "2759260",
+            "lvl": "80",
+            "BSP_total": "1564220727",
+            "BSP_prediction_date": "2026-01-24",
+            "ff_bse": "1415230254",
+            "ff_updated": "2025-11-22"
+        },
+        {
+            "name": "ExeQtd",
+            "id": "2762105",
+            "lvl": "22",
+            "BSP_total": "2618336131",
+            "BSP_prediction_date": "2026-02-23",
+            "ff_bse": "2275027499",
+            "ff_updated": "2026-01-30"
+        },
+        {
+            "name": "Discoball",
+            "id": "2763691",
+            "lvl": "100",
+            "BSP_total": "2890239807",
+            "BSP_prediction_date": "2026-02-22",
+            "ff_bse": "2435658406",
+            "ff_updated": "2026-02-21"
+        },
+        {
+            "name": "CaptWinters",
+            "id": "2766486",
+            "lvl": "91",
+            "BSP_total": "1124288756",
+            "BSP_prediction_date": "2026-01-23",
+            "ff_bse": "1193979997",
+            "ff_updated": "2026-02-13"
+        },
+        {
+            "name": "King-Cobra",
+            "id": "2770110",
+            "lvl": "92",
+            "BSP_total": "1241958663",
+            "BSP_prediction_date": "2026-02-24",
+            "ff_bse": "1128342574",
+            "ff_updated": "2026-02-14"
+        },
+        {
+            "name": "lod",
+            "id": "2774885",
+            "lvl": "100",
+            "BSP_total": "3409169696",
+            "BSP_prediction_date": "2026-02-15",
+            "ff_bse": "3493193580",
+            "ff_updated": "2026-02-24"
+        },
+        {
+            "name": "Night-Fury",
+            "id": "2776321",
+            "lvl": "77",
+            "BSP_total": "1331115148",
+            "BSP_prediction_date": "2026-02-21",
+            "ff_bse": "444424848",
+            "ff_updated": "2026-02-08"
+        },
+        {
+            "name": "_Lezcano_",
+            "id": "2790918",
+            "lvl": "50",
+            "BSP_total": "519284451",
+            "BSP_prediction_date": "2025-11-22",
+            "ff_bse": "526172451",
+            "ff_updated": "2025-11-22"
+        },
+        {
+            "name": "TheRaveRaven",
+            "id": "2793589",
+            "lvl": "60",
+            "BSP_total": "651793146",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "89988292",
+            "ff_updated": "2026-02-05"
+        },
+        {
+            "name": "DoneFeedingFox",
+            "id": "2795399",
+            "lvl": "81",
+            "BSP_total": "1093487110",
+            "BSP_prediction_date": "2026-02-21",
+            "ff_bse": "758974539",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "TDR",
+            "id": "2796303",
+            "lvl": "99",
+            "BSP_total": "2044780853",
+            "BSP_prediction_date": "2026-02-23",
+            "ff_bse": "1675835371",
+            "ff_updated": "2026-01-29"
+        },
+        {
+            "name": "FattyMatty",
+            "id": "2797952",
+            "lvl": "85",
+            "BSP_total": "776622164",
+            "BSP_prediction_date": "2026-02-23",
+            "ff_bse": "702985921",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "FlaMeBeRgZA",
+            "id": "2798893",
+            "lvl": "100",
+            "BSP_total": "3154750691",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "2157463009",
+            "ff_updated": "2026-01-23"
+        },
+        {
+            "name": "HidekiRyuu",
+            "id": "2800659",
+            "lvl": "55",
+            "BSP_total": "637918018",
+            "BSP_prediction_date": "2026-02-13",
+            "ff_bse": "648778574",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "Merco",
+            "id": "2800664",
+            "lvl": "95",
+            "BSP_total": "1604332760",
+            "BSP_prediction_date": "2026-02-13",
+            "ff_bse": "1721987780",
+            "ff_updated": "2026-02-22"
+        },
+        {
+            "name": "Mhisani",
+            "id": "2806147",
+            "lvl": "70",
+            "BSP_total": "858778593",
+            "BSP_prediction_date": "2026-02-15",
+            "ff_bse": "848686719",
+            "ff_updated": "2026-02-23"
+        },
+        {
+            "name": "AfroBoy",
+            "id": "2822838",
+            "lvl": "35",
+            "BSP_total": "812198837",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "811724063",
+            "ff_updated": "2026-02-13"
+        },
+        {
+            "name": "6FallenAngel666",
+            "id": "2829970",
+            "lvl": "90",
+            "BSP_total": "857886588",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "865375385",
+            "ff_updated": "2026-02-13"
+        },
+        {
+            "name": "Cromus",
+            "id": "2833919",
+            "lvl": "70",
+            "BSP_total": "1399685160",
+            "BSP_prediction_date": "2026-01-23",
+            "ff_bse": "1402674650",
+            "ff_updated": "2026-01-24"
+        },
+        {
+            "name": "Forgeron",
+            "id": "2843242",
+            "lvl": "93",
+            "BSP_total": "1810802799",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "1324801380",
+            "ff_updated": "2026-02-05"
+        },
+        {
+            "name": "JoiNto",
+            "id": "2877210",
+            "lvl": "99",
+            "BSP_total": "1667918223",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "1758189235",
+            "ff_updated": "2026-02-24"
+        },
+        {
+            "name": "Neldo",
+            "id": "2886045",
+            "lvl": "75",
+            "BSP_total": "1151361110",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "1043470792",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "Bellarrh",
+            "id": "2886122",
+            "lvl": "90",
+            "BSP_total": "898272776",
+            "BSP_prediction_date": "2026-01-23",
+            "ff_bse": "1055231281",
+            "ff_updated": "2026-02-08"
+        },
+        {
+            "name": "Abomb03kl",
+            "id": "3000662",
+            "lvl": "36",
+            "BSP_total": "648140",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "158996",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "Dark_luna_light",
+            "id": "3002136",
+            "lvl": "30",
+            "BSP_total": "8306401",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "1148785",
+            "ff_updated": "2026-02-22"
+        },
+        {
+            "name": "Hyo_",
+            "id": "3017175",
+            "lvl": "23",
+            "BSP_total": "102290525",
+            "BSP_prediction_date": "2026-01-23",
+            "ff_bse": "110655194",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "KnugeLadd",
+            "id": "3036995",
+            "lvl": "79",
+            "BSP_total": "949041021",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "777886513",
+            "ff_updated": "2026-02-13"
+        },
+        {
+            "name": "Thadon1982",
+            "id": "3079464",
+            "lvl": "49",
+            "BSP_total": "261033394",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "283363124",
+            "ff_updated": "2026-02-23"
+        },
+        {
+            "name": "Tucky",
+            "id": "3116625",
+            "lvl": "79",
+            "BSP_total": "527480407",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "519689369",
+            "ff_updated": "2026-02-14"
+        },
+        {
+            "name": "Furtik",
+            "id": "3184969",
+            "lvl": "89",
+            "BSP_total": "945663472",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "887110054",
+            "ff_updated": "2026-02-13"
+        },
+        {
+            "name": "Emmy84",
+            "id": "3230205",
+            "lvl": "56",
+            "BSP_total": "618743752",
+            "BSP_prediction_date": "2026-02-23",
+            "ff_bse": "154945894",
+            "ff_updated": "2025-11-01"
+        },
+        {
+            "name": "HillStache",
+            "id": "3231146",
+            "lvl": "80",
+            "BSP_total": "135614074",
+            "BSP_prediction_date": "2026-02-15",
+            "ff_bse": "136584864",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "SilverDeluxe",
+            "id": "3241212",
+            "lvl": "78",
+            "BSP_total": "97678597",
+            "BSP_prediction_date": "2026-02-24",
+            "ff_bse": "29945714",
+            "ff_updated": "2026-02-19"
+        },
+        {
+            "name": "BabyNina",
+            "id": "3391903",
+            "lvl": "41",
+            "BSP_total": "33074127",
+            "BSP_prediction_date": "2026-02-20",
+            "ff_bse": "6085624",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "Kunyiw",
+            "id": "3431288",
+            "lvl": "65",
+            "BSP_total": "40770461",
+            "BSP_prediction_date": "2026-02-23",
+            "ff_bse": "42744958",
+            "ff_updated": "2026-02-24"
+        },
+        {
+            "name": "TezSteg",
+            "id": "3439382",
+            "lvl": "45",
+            "BSP_total": "7676487",
+            "BSP_prediction_date": "2026-02-15",
+            "ff_bse": "7850707",
+            "ff_updated": "2026-02-16"
+        },
+        {
+            "name": "entrapt448",
+            "id": "3522864",
+            "lvl": "55",
+            "BSP_total": "31385621",
+            "BSP_prediction_date": "2026-02-23",
+            "ff_bse": "20952498",
+            "ff_updated": "2026-02-13"
+        },
+        {
+            "name": "McAwesome1337",
+            "id": "3561058",
+            "lvl": "65",
+            "BSP_total": "14612117",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "14589921",
+            "ff_updated": "2026-02-23"
+        },
+        {
+            "name": "Ghastly",
+            "id": "3589786",
+            "lvl": "54",
+            "BSP_total": "15195879",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "15423409",
+            "ff_updated": "2026-02-13"
+        },
+        {
+            "name": "SkjeggeLadd",
+            "id": "3593952",
+            "lvl": "63",
+            "BSP_total": "94875366",
+            "BSP_prediction_date": "2026-02-15",
+            "ff_bse": "94860532",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "KlattLadd",
+            "id": "3659067",
+            "lvl": "67",
+            "BSP_total": "52884721",
+            "BSP_prediction_date": "2026-02-14",
+            "ff_bse": "53026210",
+            "ff_updated": "2026-02-13"
+        },
+        {
+            "name": "Happi",
+            "id": "3662653",
+            "lvl": "47",
+            "BSP_total": "8899475",
+            "BSP_prediction_date": "2026-02-21",
+            "ff_bse": "9611264",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "slxdnedavid",
+            "id": "3675118",
+            "lvl": "59",
+            "BSP_total": "63243396",
+            "BSP_prediction_date": "2026-02-19",
+            "ff_bse": "27948810",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "PREZX",
+            "id": "3676816",
+            "lvl": "59",
+            "BSP_total": "53350713",
+            "BSP_prediction_date": "2026-02-13",
+            "ff_bse": "53793859",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "Simon610",
+            "id": "3819432",
+            "lvl": "32",
+            "BSP_total": "405568",
+            "BSP_prediction_date": "2026-02-16",
+            "ff_bse": "412776",
+            "ff_updated": "2026-02-15"
+        },
+        {
+            "name": "Goth_Sullus",
+            "id": "3831271",
+            "lvl": "33",
+            "BSP_total": "382994",
+            "BSP_prediction_date": "2026-02-20",
+            "ff_bse": "241116",
+            "ff_updated": "2026-01-27"
+        },
+        {
+            "name": "IVerbYourNoun",
+            "id": "3931799",
+            "lvl": "38",
+            "BSP_total": "230440",
+            "BSP_prediction_date": "2026-02-15",
+            "ff_bse": "239616",
+            "ff_updated": "2026-02-19"
+        },
+        {
+            "name": "DemoBoi",
+            "id": "3951176",
+            "lvl": "27",
+            "BSP_total": "113530",
+            "BSP_prediction_date": "2026-02-17",
+            "ff_bse": "137418",
+            "ff_updated": "2026-02-21"
         }
     ]
 }
