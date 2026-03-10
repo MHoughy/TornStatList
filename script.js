@@ -49,7 +49,7 @@ async function fetchData() {
     }
 
     // Fetch ALL faction members in ONE call
-    const factionUrl = `https://api.torn.com/v2/faction/33097/members?striptags=true&key=${apiKey}`;
+    const factionUrl = `https://api.torn.com/v2/faction/14820/members?striptags=true&key=${apiKey}`;
     const factionResponse = await fetch(factionUrl);
     const factionData = await factionResponse.json();
 
