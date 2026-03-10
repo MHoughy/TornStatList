@@ -245,12 +245,13 @@ function createAttackLink(id, status) {
 function populateAPIKey() {
   const urlParams = new URLSearchParams(window.location.search);
   const apiKey = urlParams.get('apiKey');
-  const statsFilter = urlParams.get('statsFilter'); //added
+  const statsFilter = urlParams.get('statsFilter');
+
   if (apiKey) {
     document.getElementById("api-key").value = apiKey;
   }
-  // Section Added
-  if (statFilter) {
+
+  if (statsFilter) {
     document.getElementById("filter-input").value = statsFilter;
   }
 }
