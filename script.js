@@ -176,7 +176,7 @@ function updateStatus() {
   const rows = document.querySelectorAll("#table-body tr");
 
   rows.forEach((row) => {
-    const statusCell = row.querySelector("td:nth-child(4)"); 
+    const statusCell = row.querySelector("td:nth-child(7)"); 
     if (!statusCell) return;
 
     const currentStatus = statusCell.textContent.trim();
@@ -189,7 +189,7 @@ function updateStatus() {
       statusCell.textContent = "Okay";
 
       const userId = row.querySelector("a[href*='XID']").textContent.match(/\[(\d+)\]/)[1];
-      const attackLinkCell = row.querySelector("td:nth-child(5)"); 
+      const attackLinkCell = row.querySelector("td:nth-child(7)"); 
       attackLinkCell.innerHTML = createAttackLink(userId, "Okay");
     } else {
       const minutes = Math.floor(updatedRemaining / 60);
